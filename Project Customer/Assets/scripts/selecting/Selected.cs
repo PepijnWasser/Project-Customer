@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoatSelected : MonoBehaviour
+public class Selected : MonoBehaviour
 {
     public bool selected = false;
     public Material selectedMaterial;
