@@ -2357,6 +2357,12 @@ Terrain:
   m_GroupingID: 0
   m_RenderingLayerMask: 1
   m_AllowAutoConnect: 1
+--- !u!4 &1327725846 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 02c81e166443b0345942a3515337dd87,
+    type: 3}
+  m_PrefabInstance: {fileID: 1523201240}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1424920153
 GameObject:
   m_ObjectHideFlags: 0
@@ -2893,7 +2899,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e78bc5ff5b1b5b4eabc8677ad36b478, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 1327725846}
   levelText: {fileID: 2142371145}
 --- !u!114 &2142371145
 MonoBehaviour:
