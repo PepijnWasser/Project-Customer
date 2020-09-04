@@ -4,19 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Boat
-  - Water
-  - Node
-  - selectionManager
-  - wood
-  - plastic
-  - oil
-  - worldData
-  - wareHouse
-  - playerInfo
-  - sellMenu
-  - harbor
-  - buyMenu
+  - Floor
   layers:
   - Default
   - TransparentFX
