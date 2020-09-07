@@ -1,13 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class MoveToQue : MonoBehaviour
 {
     public float speed;
+
     List<Vector3> que = new List<Vector3>();
+
     int targetIndex = 0;
     Vector3 target;
+
+    NavMeshAgent myAgent;
+
+    void Start()
+    {
+        myAgent = GetComponent<NavMeshAgent>();    
+    }
 
     void Update()
     {
@@ -27,7 +37,7 @@ public class MoveToQue : MonoBehaviour
     {
         if (que != null && que.Count != 0)
         {
-            transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
+            myAgent.SetDestination(target);
 
             if (transform.position == target)
             {

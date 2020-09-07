@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Selected : MonoBehaviour
 {
+    [HideInInspector]
     public bool selected = false;
     public Material selectedMaterial;
     public Material notSelectedMaterial;
@@ -18,7 +19,6 @@ public class Selected : MonoBehaviour
 
     void Update()
     {
-        //Debug.Log(selected);
         if(selected == true)
         {
             meshRenderer.material = selectedMaterial;

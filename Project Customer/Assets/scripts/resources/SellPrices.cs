@@ -9,19 +9,23 @@ public class SellPrices : MonoBehaviour
     public int minSellPriceOil;
     public int maxSellPriceOil;
 
+    [Min(30)]
     public int roughChangeTime;
 
     private float oldSellPriceWood;
+    [HideInInspector]
     public float sellPriceWood;
-    private int targetSellPriceWood;
+    private int targetSellPriceWood = 2;
 
     private float oldSellPricePlastic;
+    [HideInInspector]
     public float sellPricePlastic;
-    private int targetSellPricePlastic;
+    private int targetSellPricePlastic = 2;
 
     private float oldSellPriceOil;
+    [HideInInspector]
     public float sellPriceOil;
-    private int targetSellPriceOil;
+    private int targetSellPriceOil = 2;
 
     int randomDelayWood = 0;
     private float secondcounterWood = 0;
@@ -31,6 +35,7 @@ public class SellPrices : MonoBehaviour
 
     int randomDelayOil = 0;
     private float secondcounterOil = 0;
+
 
     void Update()
     {

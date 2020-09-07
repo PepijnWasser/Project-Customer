@@ -16,8 +16,11 @@ public class wareHouse : MonoBehaviour
     public int wareHouseMaxWood;
     public int wareHouseMaxOil;
 
+    [HideInInspector]
     public int plasticStored;
+    [HideInInspector]
     public int oilStored;
+    [HideInInspector]
     public int woodStored;
 
     void Start()
@@ -31,28 +34,35 @@ public class wareHouse : MonoBehaviour
     {
         foreach(GameObject boat in GameObject.FindGameObjectsWithTag("Boat"))
         {
-            boats.Add(boat);
+            if(boats.Contains(boat) == false)
+            {
+                boats.Add(boat);
+            }
         }
+
         foreach(GameObject boat in boats)
         {
             if(Vector3.Distance(transform.position, boat.transform.position) <= wareHousePickupRange)
             {
                 Inventory boatInventory = boat.GetComponent<Inventory>();
-                while(boatInventory.oilStored >= oilVolume)
+                if(boatInventory != null)
                 {
-                    boatInventory.RemoveOil();
-                    AddOil();
-                }
-                while (boatInventory.woodStored >= woodVolume)
-                {
-                    boatInventory.RemoveWood();
-                    AddWood();
-                }
-                while (boatInventory.plasticStored >= plasticVolume)
-                {
-                    boatInventory.RemovePlastic();
-                    AddPlastic();
-                }
+                    while (boatInventory.oilStored >= oilVolume)
+                    {
+                        boatInventory.RemoveOil();
+                        AddOil();
+                    }
+                    while (boatInventory.woodStored >= woodVolume)
+                    {
+                        boatInventory.RemoveWood();
+                        AddWood();
+                    }
+                    while (boatInventory.plasticStored >= plasticVolume)
+                    {
+                        boatInventory.RemovePlastic();
+                        AddPlastic();
+                    }
+                }             
             }
         }
     }
@@ -74,7 +84,7 @@ public class wareHouse : MonoBehaviour
 
     public void RemovePlastic()
     {
-        plasticStored += plasticVolume;
+        plasticStored -= plasticVolume;
     }
 
     public void RemoveOil()

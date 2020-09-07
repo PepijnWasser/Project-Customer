@@ -106,7 +106,7 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.5
+    agentRadius: 0.75
     agentHeight: 2
     agentSlope: 45
     agentClimb: 0.4
@@ -114,13 +114,13 @@ NavMeshSettings:
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.16666667
+    cellSize: 0.25
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 38070e6261ed949409dd0b3bb3855c09, type: 2}
 --- !u!1 &81305276
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,7 +249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 957781c4550cf2d459040fffd549c403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  money: 0
+  money: 2
 --- !u!4 &153342058
 Transform:
   m_ObjectHideFlags: 0
@@ -476,7 +476,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1297093819}
         m_MethodName: SellWood
         m_Mode: 1
         m_Arguments:
@@ -1067,8 +1067,8 @@ GameObject:
   m_Name: harbor
   m_TagString: harbor
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &577208781
 BoxCollider:
@@ -1183,7 +1183,6 @@ MonoBehaviour:
     type: 3}
   hugeBoat: {fileID: 7040054136698265158, guid: 89ba7871b47c6c847a7b6062868c0951,
     type: 3}
-  buyMenu: {fileID: 0}
 --- !u!1 &606008964
 GameObject:
   m_ObjectHideFlags: 0
@@ -1406,6 +1405,55 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &758463034
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 758463036}
+  - component: {fileID: 758463035}
+  m_Layer: 0
+  m_Name: spawnGarbage
+  m_TagString: spawnGarbage
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &758463035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758463034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f80949a20611fed498d16bc1caf1de20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oil: {fileID: 6630034700301755561, guid: 749f611bcbbc48641877c66ac27099b0, type: 3}
+  plastic: {fileID: 2535368874062987338, guid: 846cc97b1d9228e44ba9761f1279728e, type: 3}
+  wood: {fileID: 7698535832638505767, guid: b7d86034fbfca7e4080610bec3553dfb, type: 3}
+  oilSpawnTime: 5
+  plasticSpawnTime: 5
+  woodSpawnTime: 5
+--- !u!4 &758463036
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758463034}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.8325615, y: 4.039437, z: 6.3049126}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &793906950
 GameObject:
   m_ObjectHideFlags: 0
@@ -1423,7 +1471,7 @@ GameObject:
   m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!64 &793906951
 MeshCollider:
@@ -1495,7 +1543,7 @@ Transform:
   m_GameObject: {fileID: 793906950}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 40, y: 1, z: 40}
+  m_LocalScale: {x: 20, y: 1, z: 20}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -1642,6 +1690,7 @@ MonoBehaviour:
   woodVolume: 1
   plasticVolume: 2
   oilVolume: 3
+  MapSize: 200
 --- !u!4 &1010747455
 Transform:
   m_ObjectHideFlags: 0
@@ -1996,7 +2045,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1297093819}
         m_MethodName: SellPlastic
         m_Mode: 1
         m_Arguments:
@@ -2064,8 +2113,8 @@ GameObject:
   m_Name: wareHouse
   m_TagString: wareHouse
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!114 &1297093814
 MonoBehaviour:
@@ -2084,9 +2133,9 @@ MonoBehaviour:
   wareHouseMaxPlastic: 20
   wareHouseMaxWood: 20
   wareHouseMaxOil: 20
-  plasticStored: 0
-  oilStored: 0
-  woodStored: 0
+  plasticStored: 5
+  oilStored: 5
+  woodStored: 5
 --- !u!65 &1297093815
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2173,7 +2222,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d320f8fbd142fc342927fabbe5f7acd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sellMenu: {fileID: 0}
 --- !u!114 &1297093820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2201,16 +2249,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74d99833210ccd14fb5a2e12be59da03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSellPriceWood: 0
-  maxSellPriceWood: 0
-  minSellPricePlastic: 0
-  maxSellPricePlastic: 0
-  minSellPriceOil: 0
-  maxSellPriceOil: 0
-  roughChangeTime: 0
-  sellPriceWood: 0
-  sellPricePlastic: 0
-  sellPriceOil: 0
+  minSellPriceWood: 2
+  maxSellPriceWood: 20
+  minSellPricePlastic: 2
+  maxSellPricePlastic: 20
+  minSellPriceOil: 2
+  maxSellPriceOil: 20
+  roughChangeTime: 60
+  sellPriceWood: 2
+  sellPricePlastic: 2
+  sellPriceOil: 2
 --- !u!1 &1348489794
 GameObject:
   m_ObjectHideFlags: 0
@@ -2918,6 +2966,100 @@ MonoBehaviour:
   plasticStored: 0
   oilStored: 0
   woodStored: 0
+--- !u!1 &1909483791
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1909483795}
+  - component: {fileID: 1909483794}
+  - component: {fileID: 1909483793}
+  - component: {fileID: 1909483792}
+  m_Layer: 0
+  m_Name: Plane (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!64 &1909483792
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1909483791}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1909483793
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1909483791}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &1909483794
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1909483791}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1909483795
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1909483791}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 126.4, y: 24.5, z: 73.5}
+  m_LocalScale: {x: 10, y: 9.88, z: 10}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2020702336
 GameObject:
   m_ObjectHideFlags: 0
@@ -3000,7 +3142,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1297093819}
         m_MethodName: SellOil
         m_Mode: 1
         m_Arguments:

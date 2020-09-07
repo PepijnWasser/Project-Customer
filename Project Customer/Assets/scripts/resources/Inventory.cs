@@ -14,8 +14,11 @@ public class Inventory : MonoBehaviour
     public int maxOil;
     public int maxWood;
 
+    [HideInInspector]
     public int plasticStored;
+    [HideInInspector]
     public int oilStored;
+    [HideInInspector]
     public int woodStored;
 
     void Start()

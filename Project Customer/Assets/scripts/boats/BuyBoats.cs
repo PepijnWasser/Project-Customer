@@ -14,7 +14,7 @@ public class BuyBoats : MonoBehaviour
     public GameObject largeBoat;
     public GameObject hugeBoat;
 
-    public Canvas buyMenu;
+    Canvas buyMenu;
     playerInfo playerInfo;
 
     void Start()

@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class sellResources : MonoBehaviour
 {
-    public Canvas sellMenu;
+    Canvas sellMenu;
     SellPrices sellPrices;
     worldData worldData;
     playerInfo playerInfo;
@@ -52,19 +52,19 @@ public class sellResources : MonoBehaviour
 
     public void SellPlastic()
     {
-        if (wareHouse.woodStored >= worldData.woodVolume)
+        if (wareHouse.plasticStored >= worldData.plasticVolume)
         {
             playerInfo.AddMoney(sellPrices.sellPricePlastic);
-            wareHouse.RemoveWood();
+            wareHouse.RemovePlastic();
         }
     }
 
     public void SellOil()
     {
-        if (wareHouse.woodStored >= worldData.woodVolume)
+        if (wareHouse.oilStored >= worldData.oilVolume)
         {
             playerInfo.AddMoney(sellPrices.sellPriceOil);
-            wareHouse.RemoveWood();
+            wareHouse.RemoveOil();
         }
     }
 }

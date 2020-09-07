@@ -109,7 +109,6 @@ public class selectObjects : MonoBehaviour
                     ///
                     else
                     {
-                        Debug.Log(objectHit.tag);
                         DeselectAll();
                     }
                 }

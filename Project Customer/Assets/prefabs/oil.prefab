@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3746466819371466690}
   - component: {fileID: 487310058254609638}
   - component: {fileID: 5115350538400531780}
+  - component: {fileID: -1354384237652028993}
   m_Layer: 0
   m_Name: oil
   m_TagString: oil
@@ -93,3 +94,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-1354384237652028993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6630034700301755561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 543e8711a11cfe348a70cf8a800f89b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnDuration: 2

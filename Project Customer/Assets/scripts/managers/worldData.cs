@@ -7,4 +7,5 @@ public class worldData : MonoBehaviour
     public int woodVolume;
     public int plasticVolume;
     public int oilVolume;
+    public int MapSize;
 }
