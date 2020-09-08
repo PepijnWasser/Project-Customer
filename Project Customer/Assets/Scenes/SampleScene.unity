@@ -217,7 +217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e268071b184333241a4294a2d8f43cfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zoomSpeed: 5
+  zoomSpeed: 2
   minZoom: 60
   maxZoom: 10
 --- !u!1 &100846652
@@ -1012,9 +1012,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b4c5ea9f7857654e83e13c5d1087b94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  woodVolume: 1
+  woodVolume: 2
   plasticVolume: 2
-  oilVolume: 3
+  oilVolume: 2
   mapSize: 200
 --- !u!114 &489035438
 MonoBehaviour:
@@ -1041,7 +1041,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 957781c4550cf2d459040fffd549c403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  money: 200
+  money: 0
 --- !u!4 &489035440
 Transform:
   m_ObjectHideFlags: 0
@@ -2360,13 +2360,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wareHousePickupRange: 10
-  wareHouseInventorySpace: 30
-  wareHouseMaxPlastic: 20
-  wareHouseMaxWood: 20
+  wareHouseInventorySpace: 40
+  wareHouseMaxPlastic: 10
+  wareHouseMaxWood: 10
   wareHouseMaxOil: 20
-  plasticStored: 5
-  oilStored: 5
-  woodStored: 5
+  plasticStored: 0
+  oilStored: 0
+  woodStored: 0
 --- !u!65 &1297093815
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2826,7 +2826,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1549326918}
-  - component: {fileID: 1549326917}
+  - component: {fileID: 1549326919}
   m_Layer: 0
   m_Name: camera pivot
   m_TagString: Untagged
@@ -2834,21 +2834,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1549326917
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1549326916}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5af5efc706231b14ebf99abd7b8d5a81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  boostSpeed: 10
-  rotationSpeed: 90
 --- !u!4 &1549326918
 Transform:
   m_ObjectHideFlags: 0
@@ -2865,6 +2850,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1549326919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549326916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed061e2f2cfb7524fa4d4732fc14d315, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  boostSpeed: 10
+  rotationSpeed: 90
 --- !u!1 &1557060634
 GameObject:
   m_ObjectHideFlags: 0
@@ -2974,6 +2974,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7994680290498544116, guid: af8154d6cc8cf374889dcad16382bf69,
+        type: 3}
+      propertyPath: pickupRange
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 421292147070599103, guid: af8154d6cc8cf374889dcad16382bf69,
+        type: 3}
+      propertyPath: spawnDuration
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8829085790735745840, guid: af8154d6cc8cf374889dcad16382bf69,
         type: 3}
       propertyPath: m_Name
@@ -3476,19 +3486,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1562330812}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1843147537
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1843147528}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e90f18fd7e2ab944b2fc5488b420a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pickupRange: 5
 --- !u!114 &1843147538
 MonoBehaviour:
   m_ObjectHideFlags: 0

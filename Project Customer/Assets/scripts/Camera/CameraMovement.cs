@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EmptyScrip : MonoBehaviour
+public class CameraMovement : MonoBehaviour
 {
     public float moveSpeed;
     public float boostSpeed;
@@ -36,7 +36,7 @@ public class EmptyScrip : MonoBehaviour
         float newX = Mathf.Clamp(transform.position.x, -worldSize / 2, worldSize / 2);
         float newZ = Mathf.Clamp(transform.position.z, -worldSize / 2, worldSize / 2);
         transform.position = new Vector3(newX, transform.position.y, newZ);
-     
+
     }
 
     void Rotate()
