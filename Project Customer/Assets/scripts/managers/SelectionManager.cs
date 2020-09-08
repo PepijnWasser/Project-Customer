@@ -4,7 +4,7 @@ using System.Reflection;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class selectObjects : MonoBehaviour
+public class SelectionManager : MonoBehaviour
 {
     public List<GameObject> selectedObjects = new List<GameObject>();
     Image canvacanvasImage;

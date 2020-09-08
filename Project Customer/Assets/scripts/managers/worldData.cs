@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class worldData : MonoBehaviour
+public class WorldData : MonoBehaviour
 {
     public int woodVolume;
     public int plasticVolume;
     public int oilVolume;
-    public int MapSize;
+    public int mapSize;
 }

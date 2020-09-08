@@ -23,9 +23,9 @@ public class Inventory : MonoBehaviour
 
     void Start()
     {
-        plasticVolume = GameObject.FindGameObjectWithTag("worldData").GetComponent<worldData>().plasticVolume;
-        woodVolume = GameObject.FindGameObjectWithTag("worldData").GetComponent<worldData>().woodVolume;
-        oilVolume = GameObject.FindGameObjectWithTag("worldData").GetComponent<worldData>().oilVolume;
+        plasticVolume = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<WorldData>().plasticVolume;
+        woodVolume = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<WorldData>().woodVolume;
+        oilVolume = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<WorldData>().oilVolume;
     }
 
     public void AddPlastic()

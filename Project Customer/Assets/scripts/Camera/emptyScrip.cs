@@ -2,16 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class emptyScrip : MonoBehaviour
+public class EmptyScrip : MonoBehaviour
 {
     public float moveSpeed;
+    public float boostSpeed;
     public float rotationSpeed;
 
     int worldSize;
 
     private void Start()
     {
-        worldSize = GameObject.FindGameObjectWithTag("worldData").GetComponent<worldData>().MapSize;
+        worldSize = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<WorldData>().mapSize;
     }
 
     private void Update()
@@ -24,7 +25,14 @@ public class emptyScrip : MonoBehaviour
     void Controls()
     {
         Vector3 moveVec = new Vector3(Input.GetAxis("Vertical"), 0, -Input.GetAxis("Horizontal"));
-        transform.Translate(moveVec * moveSpeed * Time.deltaTime);
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            transform.Translate(moveVec * boostSpeed * Time.deltaTime);
+        }
+        else
+        {
+            transform.Translate(moveVec * moveSpeed * Time.deltaTime);
+        }
         float newX = Mathf.Clamp(transform.position.x, -worldSize / 2, worldSize / 2);
         float newZ = Mathf.Clamp(transform.position.z, -worldSize / 2, worldSize / 2);
         transform.position = new Vector3(newX, transform.position.y, newZ);

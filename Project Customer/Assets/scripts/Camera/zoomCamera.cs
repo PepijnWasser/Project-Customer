@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class zoomCamera : MonoBehaviour
+public class ZoomCamera : MonoBehaviour
 {
     public float zoomSpeed;
     public float minZoom;

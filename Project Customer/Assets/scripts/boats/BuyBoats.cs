@@ -15,11 +15,11 @@ public class BuyBoats : MonoBehaviour
     public GameObject hugeBoat;
 
     Canvas buyMenu;
-    playerInfo playerInfo;
+    PlayerInfo playerInfo;
 
     void Start()
     {
-        playerInfo = GameObject.FindGameObjectWithTag("playerInfo").GetComponent<playerInfo>();
+        playerInfo = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<PlayerInfo>();
 
         GameObject tempObject = GameObject.Find("buyMenu");
         if (tempObject != null)

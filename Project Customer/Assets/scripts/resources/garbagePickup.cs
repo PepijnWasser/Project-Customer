@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class garbagePickup : MonoBehaviour
+public class GarbagePickup : MonoBehaviour
 {
     private List<GameObject> garbage = new List<GameObject>();
     private List<GameObject> piecesToRemove = new List<GameObject>();
@@ -38,13 +38,13 @@ public class garbagePickup : MonoBehaviour
             if (Vector3.Distance(transform.position, piece.transform.position) < pickupRange)
             {
                 int plasticStored = GetComponent<Inventory>().plasticStored;
-                int plasticVolume = GameObject.FindGameObjectWithTag("worldData").GetComponent<worldData>().plasticVolume;
+                int plasticVolume = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<WorldData>().plasticVolume;
                 int maxPlastic = GetComponent<Inventory>().maxPlastic;
                 int woodStored = GetComponent<Inventory>().woodStored;
-                int woodVolume = GameObject.FindGameObjectWithTag("worldData").GetComponent<worldData>().woodVolume;
+                int woodVolume = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<WorldData>().woodVolume;
                 int maxWood = GetComponent<Inventory>().maxWood;
                 int oilStored = GetComponent<Inventory>().oilStored;
-                int oilVolume = GameObject.FindGameObjectWithTag("worldData").GetComponent<worldData>().oilVolume;
+                int oilVolume = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<WorldData>().oilVolume;
                 int maxOil = GetComponent<Inventory>().maxOil;
                 int inventorySpace = GetComponent<Inventory>().inventorySpace;
 

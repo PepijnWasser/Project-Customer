@@ -15,7 +15,7 @@ public class MovementQue : MonoBehaviour
 
     void Update()
     {
-        selectedObjects = GameObject.FindGameObjectWithTag("selectionManager").GetComponent<selectObjects>().selectedObjects;
+        selectedObjects = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<SelectionManager>().selectedObjects;
         if (transform.GetComponent<Selected>() != null)
         {
             selected = transform.GetComponent<Selected>().selected;

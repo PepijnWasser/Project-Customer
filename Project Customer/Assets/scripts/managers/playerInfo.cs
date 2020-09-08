@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playerInfo : MonoBehaviour
+public class PlayerInfo : MonoBehaviour
 {
     public float money = 0;
 

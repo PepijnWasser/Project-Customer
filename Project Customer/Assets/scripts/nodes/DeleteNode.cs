@@ -16,8 +16,8 @@ public class DeleteNode : MonoBehaviour
             if (Input.GetKey(KeyCode.Delete) || Input.GetKey(KeyCode.Backspace))
             {               
                 objectCreatedFor.GetComponent<MovementQue>().RemoveCoordinateFromQue(transform.position);
-                GameObject selectionManager = GameObject.FindGameObjectWithTag("selectionManager");
-                selectionManager.GetComponent<selectObjects>().selectedObjects.Remove(gameObject);
+                GameObject selectionManager = GameObject.FindGameObjectWithTag("LevelManager");
+                selectionManager.GetComponent<SelectionManager>().selectedObjects.Remove(gameObject);
             }
         }        
     }

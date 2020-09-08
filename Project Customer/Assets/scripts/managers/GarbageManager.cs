@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class spawnGarbage : MonoBehaviour
+public class GarbageManager : MonoBehaviour
 {
     public GameObject oil;
     public GameObject plastic;
@@ -24,7 +24,7 @@ public class spawnGarbage : MonoBehaviour
 
     private void Start()
     {
-        worldSize = GameObject.FindGameObjectWithTag("worldData").GetComponent<worldData>().MapSize;
+        worldSize = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<WorldData>().mapSize;
     }
 
     void Update()
@@ -93,5 +93,20 @@ public class spawnGarbage : MonoBehaviour
         spawnposition = new Vector3(0, 0, 0);
 
         return spawnposition;
+    }
+
+    public void DecreaseWoodSpawnTime()
+    {
+        woodSpawnTime += 1;
+    }
+
+    public void DecreaseOilSpawnTime()
+    {
+        oilSpawnTime += 1;
+    }
+
+    public void DecreasePlasticSpawnTime()
+    {
+        plasticSpawnTime += 1;
     }
 }
