@@ -2,7 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+<<<<<<< HEAD
 public class spawnAnimation : MonoBehaviour
+=======
+public class SpawnAnimation : MonoBehaviour
+>>>>>>> master
 {
     [Min(0)]
     public float spawnDuration;

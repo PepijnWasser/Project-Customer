@@ -18,6 +18,10 @@ GameObject:
   - component: {fileID: 8829085790735745847}
   - component: {fileID: 886865640050019175}
   - component: {fileID: -7994680290498544116}
+<<<<<<< HEAD
+=======
+  - component: {fileID: 421292147070599103}
+>>>>>>> master
   m_Layer: 0
   m_Name: boat
   m_TagString: Boat
@@ -189,3 +193,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickupRange: 5
+<<<<<<< HEAD
+=======
+--- !u!114 &421292147070599103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8829085790735745840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 543e8711a11cfe348a70cf8a800f89b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnDuration: 3
+>>>>>>> master

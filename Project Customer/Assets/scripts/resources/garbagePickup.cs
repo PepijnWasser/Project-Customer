@@ -2,7 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+<<<<<<< HEAD
 public class garbagePickup : MonoBehaviour
+=======
+public class GarbagePickup : MonoBehaviour
+>>>>>>> master
 {
     private List<GameObject> garbage = new List<GameObject>();
     private List<GameObject> piecesToRemove = new List<GameObject>();
@@ -38,6 +42,7 @@ public class garbagePickup : MonoBehaviour
             if (Vector3.Distance(transform.position, piece.transform.position) < pickupRange)
             {
                 int plasticStored = GetComponent<Inventory>().plasticStored;
+<<<<<<< HEAD
                 int plasticVolume = GameObject.FindGameObjectWithTag("worldData").GetComponent<worldData>().plasticVolume;
                 int maxPlastic = GetComponent<Inventory>().maxPlastic;
                 int woodStored = GetComponent<Inventory>().woodStored;
@@ -45,6 +50,15 @@ public class garbagePickup : MonoBehaviour
                 int maxWood = GetComponent<Inventory>().maxWood;
                 int oilStored = GetComponent<Inventory>().oilStored;
                 int oilVolume = GameObject.FindGameObjectWithTag("worldData").GetComponent<worldData>().oilVolume;
+=======
+                int plasticVolume = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<WorldData>().plasticVolume;
+                int maxPlastic = GetComponent<Inventory>().maxPlastic;
+                int woodStored = GetComponent<Inventory>().woodStored;
+                int woodVolume = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<WorldData>().woodVolume;
+                int maxWood = GetComponent<Inventory>().maxWood;
+                int oilStored = GetComponent<Inventory>().oilStored;
+                int oilVolume = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<WorldData>().oilVolume;
+>>>>>>> master
                 int maxOil = GetComponent<Inventory>().maxOil;
                 int inventorySpace = GetComponent<Inventory>().inventorySpace;
 

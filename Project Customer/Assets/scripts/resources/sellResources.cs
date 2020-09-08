@@ -4,6 +4,7 @@ using System.Threading;
 using UnityEngine.UI;
 using UnityEngine;
 
+<<<<<<< HEAD
 public class sellResources : MonoBehaviour
 {
     Canvas sellMenu;
@@ -18,6 +19,22 @@ public class sellResources : MonoBehaviour
         playerInfo = GameObject.FindGameObjectWithTag("playerInfo").GetComponent<playerInfo>();
         sellPrices = GetComponent<SellPrices>();
         wareHouse = GetComponent<wareHouse>();
+=======
+public class SellResources : MonoBehaviour
+{
+    Canvas sellMenu;
+    SellPrices sellPrices;
+    WorldData worldData;
+    PlayerInfo playerInfo;
+    WareHouse wareHouse;
+
+    void Start()
+    {
+        worldData = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<WorldData>();
+        playerInfo = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<PlayerInfo>();
+        sellPrices = GetComponent<SellPrices>();
+        wareHouse = GetComponent<WareHouse>();
+>>>>>>> master
 
         GameObject tempObject = GameObject.Find("sellMenu");
         if (tempObject != null)
