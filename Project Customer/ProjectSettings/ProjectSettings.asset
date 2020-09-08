@@ -13,7 +13,11 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
 <<<<<<< HEAD
+<<<<<<< HEAD
   companyName: Ocean Cleanup
+=======
+  companyName: DefaultCompany
+>>>>>>> luc
 =======
   companyName: DefaultCompany
 >>>>>>> luc
@@ -49,8 +53,13 @@ PlayerSettings:
   defaultScreenWidth: 1024
   defaultScreenHeight: 768
 <<<<<<< HEAD
+<<<<<<< HEAD
   defaultScreenWidthWeb: 1920
   defaultScreenHeightWeb: 1080
+=======
+  defaultScreenWidthWeb: 960
+  defaultScreenHeightWeb: 600
+>>>>>>> luc
 =======
   defaultScreenWidthWeb: 960
   defaultScreenHeightWeb: 600
@@ -129,7 +138,11 @@ PlayerSettings:
     16:9: 1
     Others: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
   bundleVersion: 0.2
+=======
+  bundleVersion: 0.1
+>>>>>>> luc
 =======
   bundleVersion: 0.1
 >>>>>>> luc
@@ -287,6 +300,7 @@ PlayerSettings:
   AndroidValidateAppBundleSize: 1
   AndroidAppBundleSizeToValidate: 150
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_BuildTargetIcons:
   - m_BuildTarget: 
     m_Icons:
@@ -295,6 +309,9 @@ PlayerSettings:
       m_Width: 128
       m_Height: 128
       m_Kind: 0
+=======
+  m_BuildTargetIcons: []
+>>>>>>> luc
 =======
   m_BuildTargetIcons: []
 >>>>>>> luc

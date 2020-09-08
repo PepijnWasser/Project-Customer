@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
 <<<<<<< HEAD
+<<<<<<< HEAD
   - Boat
   - Water
   - Node
@@ -22,6 +23,9 @@ TagManager:
 =======
   - Floor
 >>>>>>> luc
+=======
+  - Floor
+>>>>>>> luc
   layers:
   - Default
   - TransparentFX
@@ -32,7 +36,11 @@ TagManager:
   - 
   - 
 <<<<<<< HEAD
+<<<<<<< HEAD
   - map
+=======
+  - Floor
+>>>>>>> luc
 =======
   - Floor
 >>>>>>> luc
