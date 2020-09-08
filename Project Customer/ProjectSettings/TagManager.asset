@@ -18,6 +18,7 @@ TagManager:
   - harbor
   - buyMenu
   - spawnGarbage
+  - EventDisplay
   layers:
   - Default
   - TransparentFX
