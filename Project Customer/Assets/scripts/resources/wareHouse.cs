@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WareHouse : MonoBehaviour
+public class wareHouse : MonoBehaviour
 {
     private List<GameObject> boats = new List<GameObject>();
     public int wareHousePickupRange;
@@ -44,7 +44,7 @@ public class WareHouse : MonoBehaviour
         {
             if (Vector3.Distance(transform.position, boat.transform.position) <= wareHousePickupRange)
             {
-                Inventory boatInventory = boat.GetComponent<Inventory>();
+                inventory boatInventory = boat.GetComponent<inventory>();
                 if (boatInventory != null)
                 {
                     while (boatInventory.oilStored >= oilVolume)
