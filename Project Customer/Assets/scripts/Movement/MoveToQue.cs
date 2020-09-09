@@ -5,8 +5,6 @@ using UnityEngine.AI;
 
 public class MoveToQue : MonoBehaviour
 {
-    public float speed;
-
     List<Vector3> que = new List<Vector3>();
 
     int targetIndex = 0;
@@ -19,15 +17,15 @@ public class MoveToQue : MonoBehaviour
         myAgent = GetComponent<NavMeshAgent>();    
     }
 
-    void Update()
+    void Update() 
     {
         if (transform.GetComponent<MovementQue>() != null)
         {
             que = transform.GetComponent<MovementQue>().que;
         }
-        if(que != null && que.Count != 0)
+        if(que != null && que.Count != 0 && targetIndex < que.Count)
         {
-            target = que[targetIndex];
+            target = que[targetIndex];           
         }
 
         Move();
@@ -39,7 +37,7 @@ public class MoveToQue : MonoBehaviour
         {
             myAgent.SetDestination(target);
 
-            if (transform.position == target)
+            if (Vector3.Distance(transform.position, target) < 1)
             {
                 if(targetIndex < que.Count - 1)
                 {

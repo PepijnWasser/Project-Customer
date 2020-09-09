@@ -6,6 +6,7 @@ using UnityEngine.UIElements;
 
 public class MovementQue : MonoBehaviour
 {
+    public bool smallWater;
     bool selected;
     private List<GameObject> selectedObjects = new List<GameObject>();
     public List<Vector3> que = new List<Vector3>();
@@ -33,7 +34,7 @@ public class MovementQue : MonoBehaviour
                 bool hit = Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo);
                 if (hit)
                 {
-                    if (hitInfo.transform.gameObject.tag == "Water")
+                    if (hitInfo.transform.gameObject.tag == "Water" || (smallWater && hitInfo.transform.gameObject.tag == "River"))
                     {
                         GameObject myNode = null;
                         foreach (GameObject mObject in selectedObjects)

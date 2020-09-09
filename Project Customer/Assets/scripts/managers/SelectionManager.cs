@@ -35,11 +35,13 @@ public class SelectionManager : MonoBehaviour
                 if (hit)
                 {
                     GameObject objectHit = hitInfo.transform.gameObject;
+                    Debug.Log(objectHit.tag);
                     ///
                     //boats
                     ///
                     if (objectHit.tag == "Boat")
                     {
+                        Debug.Log("boat hit");
                         DeselectAll();
                         Select(objectHit);
                         selectedObjects.Add(objectHit);
@@ -65,7 +67,7 @@ public class SelectionManager : MonoBehaviour
                     }
                     ///
                     //nodes
-                    //
+                    ///
                     else if (objectHit.tag == "Node")
                     {
                         if (CheckIfTagSelected("Boat"))

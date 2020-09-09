@@ -22,6 +22,8 @@ TagManager:
   - EventDisplay
   - GarbageManager
   - LevelManager
+  - Floor
+  - River
   layers:
   - Default
   - TransparentFX

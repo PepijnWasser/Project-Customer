@@ -78,7 +78,7 @@ public class GarbageManager : MonoBehaviour
 
         RaycastHit RayInfo = new RaycastHit();
         
-        if(Physics.Raycast(new Vector3(ranX, 500, ranZ), Vector3.down, out RayInfo, 10000))
+        if(Physics.Raycast(new Vector3(ranX, 500, ranZ), Vector3.down, out RayInfo, 1000))
         {
             if(RayInfo.transform.gameObject.tag == "Water")
             {
