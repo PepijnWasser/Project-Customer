@@ -44,7 +44,7 @@ public class wareHouse : MonoBehaviour
         {
             if (Vector3.Distance(transform.position, boat.transform.position) <= wareHousePickupRange)
             {
-                inventory boatInventory = boat.GetComponent<inventory>();
+                Inventory boatInventory = boat.GetComponent<Inventory>();
                 if (boatInventory != null)
                 {
                     while (boatInventory.oilStored >= oilVolume)

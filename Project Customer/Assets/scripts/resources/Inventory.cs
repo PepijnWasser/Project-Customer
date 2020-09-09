@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class inventory : MonoBehaviour
+public class Inventory : MonoBehaviour
 {
     public int inventorySpace;
 

@@ -222,4 +222,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92ea34c56cc0054489d49131f808333b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnDuration: 3
+  spawnDuration: 2

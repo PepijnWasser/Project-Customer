@@ -7,10 +7,13 @@ public class spawnAnimation : MonoBehaviour
     [Min(0)]
     public float spawnDuration;
 
+    Vector3 originalScale;
+
     float timer = 0;
 
     private void Awake()
     {
+        originalScale = transform.localScale;
         transform.localScale = new Vector3(0, 0, 0);
     }
 
@@ -19,7 +22,7 @@ public class spawnAnimation : MonoBehaviour
         if (timer < spawnDuration)
         {
             timer += Time.deltaTime;
-            transform.localScale = new Vector3(1, 1, 1) * (timer / spawnDuration);
+            transform.localScale = originalScale * (timer / spawnDuration);
         }
     }
 }

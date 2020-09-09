@@ -37,22 +37,22 @@ public class garbagePickup : MonoBehaviour
         {
             if (Vector3.Distance(transform.position, piece.transform.position) < pickupRange)
             {
-                int plasticStored = GetComponent<inventory>().plasticStored;
+                int plasticStored = GetComponent<Inventory>().plasticStored;
                 int plasticVolume = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<WorldData>().plasticVolume;
-                int maxPlastic = GetComponent<inventory>().maxPlastic;
-                int woodStored = GetComponent<inventory>().woodStored;
+                int maxPlastic = GetComponent<Inventory>().maxPlastic;
+                int woodStored = GetComponent<Inventory>().woodStored;
                 int woodVolume = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<WorldData>().woodVolume;
-                int maxWood = GetComponent<inventory>().maxWood;
-                int oilStored = GetComponent<inventory>().oilStored;
+                int maxWood = GetComponent<Inventory>().maxWood;
+                int oilStored = GetComponent<Inventory>().oilStored;
                 int oilVolume = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<WorldData>().oilVolume;
-                int maxOil = GetComponent<inventory>().maxOil;
-                int inventorySpace = GetComponent<inventory>().inventorySpace;
+                int maxOil = GetComponent<Inventory>().maxOil;
+                int inventorySpace = GetComponent<Inventory>().inventorySpace;
 
                 if (piece.tag == "wood")
                 {
                     if (woodStored + woodVolume <= maxWood && woodStored + oilStored + plasticStored + woodVolume < inventorySpace)
                     {
-                        GetComponent<inventory>().AddWood();
+                        GetComponent<Inventory>().AddWood();
                         piecesToRemove.Add(piece);
                     }
                 }
@@ -60,7 +60,7 @@ public class garbagePickup : MonoBehaviour
                 {
                     if (plasticStored + plasticVolume <= maxPlastic && woodStored + oilStored + plasticStored + plasticVolume < inventorySpace)
                     {
-                        GetComponent<inventory>().AddPlastic();
+                        GetComponent<Inventory>().AddPlastic();
                         piecesToRemove.Add(piece);
                     }
                 }
@@ -68,7 +68,7 @@ public class garbagePickup : MonoBehaviour
                 {
                     if (oilStored + oilVolume <= maxOil && woodStored + oilStored + plasticStored + oilVolume < inventorySpace)
                     {
-                        GetComponent<inventory>().AddOil();
+                        GetComponent<Inventory>().AddOil();
                         piecesToRemove.Add(piece);
                     }
                 }
