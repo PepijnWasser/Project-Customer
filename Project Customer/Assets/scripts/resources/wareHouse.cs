@@ -16,11 +16,11 @@ public class wareHouse : MonoBehaviour
     public int wareHouseMaxWood;
     public int wareHouseMaxOil;
 
-    [HideInInspector]
+    //[HideInInspector]
     public int plasticStored;
-    [HideInInspector]
+    //[HideInInspector]
     public int oilStored;
-    [HideInInspector]
+    //[HideInInspector]
     public int woodStored;
 
     void Start()

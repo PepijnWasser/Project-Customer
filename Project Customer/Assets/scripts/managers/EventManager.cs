@@ -75,8 +75,9 @@ public class EventManager : MonoBehaviour
     {
         if(playerInfo.money >= cost)
         {
+            playerInfo.RemoveMoney(cost);
             CloseEvent();
-
+            
             bool oilInSentence = false;
             bool woodInSentence = false;
             bool plasticInSentence = false;

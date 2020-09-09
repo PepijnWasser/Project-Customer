@@ -24,6 +24,7 @@ TagManager:
   - LevelManager
   - Floor
   - River
+  - UI
   layers:
   - Default
   - TransparentFX

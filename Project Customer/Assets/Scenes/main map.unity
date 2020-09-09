@@ -296,7 +296,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1156527524}
         m_MethodName: SellPlastic
         m_Mode: 1
         m_Arguments:
@@ -586,7 +586,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &71761672
 Transform:
   m_ObjectHideFlags: 0
@@ -1036,7 +1036,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &218333020
 Transform:
   m_ObjectHideFlags: 0
@@ -1144,7 +1144,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &229413302
 Transform:
   m_ObjectHideFlags: 0
@@ -1252,7 +1252,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &241444912
 Transform:
   m_ObjectHideFlags: 0
@@ -1452,7 +1452,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 263373355}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -96.53, y: 0, z: -39.6}
+  m_LocalPosition: {x: -96.53, y: 5, z: -39.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 753296707}
@@ -1479,7 +1479,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &263773573
 Transform:
   m_ObjectHideFlags: 0
@@ -1618,9 +1618,8 @@ GameObject:
   - component: {fileID: 292593328}
   - component: {fileID: 292593331}
   - component: {fileID: 292593330}
-  - component: {fileID: 292593329}
   m_Layer: 5
-  m_Name: Metal count
+  m_Name: Wood count
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1645,20 +1644,6 @@ RectTransform:
   m_AnchoredPosition: {x: 440, y: -515}
   m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &292593329
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 292593327}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e78bc5ff5b1b5b4eabc8677ad36b478, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  levelText: {fileID: 292593330}
 --- !u!114 &292593330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1964,7 +1949,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1156527524}
         m_MethodName: SellWood
         m_Mode: 1
         m_Arguments:
@@ -2339,7 +2324,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &631024728
 Transform:
   m_ObjectHideFlags: 0
@@ -2519,7 +2504,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &699772371
 Transform:
   m_ObjectHideFlags: 0
@@ -2888,6 +2873,7 @@ GameObject:
   - component: {fileID: 756563358}
   - component: {fileID: 756563357}
   - component: {fileID: 756563356}
+  - component: {fileID: 756563359}
   - component: {fileID: 756563355}
   m_Layer: 5
   m_Name: canvas
@@ -2895,7 +2881,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &756563355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2984,6 +2970,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &756563359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 756563354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79bfec1d97d708c47886e33444926b84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &791970596
 GameObject:
   m_ObjectHideFlags: 0
@@ -3020,7 +3018,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 20, y: -9.3}
+  m_AnchoredPosition: {x: 20, y: -9.299988}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &791970598
@@ -3227,7 +3225,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 564a563fcaf4f95418c02d7dfbd77df7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -115.1
+      value: -111.53
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 564a563fcaf4f95418c02d7dfbd77df7,
         type: 3}
@@ -3237,7 +3235,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 564a563fcaf4f95418c02d7dfbd77df7,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -147.1
+      value: -147.35
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 564a563fcaf4f95418c02d7dfbd77df7,
         type: 3}
@@ -3561,7 +3559,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &900541712
 Transform:
   m_ObjectHideFlags: 0
@@ -3741,7 +3739,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &945643191
 Transform:
   m_ObjectHideFlags: 0
@@ -4228,13 +4226,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1059339641}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e78bc5ff5b1b5b4eabc8677ad36b478, type: 3}
+  m_Script: {fileID: 11500000, guid: 79bfec1d97d708c47886e33444926b84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  levelText: {fileID: 1059339644}
 --- !u!114 &1059339644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4545,7 +4541,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1156527524}
         m_MethodName: SellOil
         m_Mode: 1
         m_Arguments:
@@ -4648,7 +4644,7 @@ MonoBehaviour:
   wareHouseMaxPlastic: 5
   wareHouseMaxWood: 5
   wareHouseMaxOil: 5
-  plasticStored: 0
+  plasticStored: 5
   oilStored: 0
   woodStored: 0
 --- !u!65 &1156527519
@@ -4925,7 +4921,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1210349536
 Transform:
   m_ObjectHideFlags: 0
@@ -5001,7 +4997,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1242820464
 Transform:
   m_ObjectHideFlags: 0
@@ -5219,7 +5215,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1424920154
 Transform:
   m_ObjectHideFlags: 0
@@ -5295,7 +5291,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1441801479
 Transform:
   m_ObjectHideFlags: 0
@@ -5452,7 +5448,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1596392083
 Transform:
   m_ObjectHideFlags: 0
@@ -5529,7 +5525,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1627882912
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6373,7 +6369,6 @@ GameObject:
   - component: {fileID: 1871894235}
   - component: {fileID: 1871894238}
   - component: {fileID: 1871894237}
-  - component: {fileID: 1871894236}
   m_Layer: 5
   m_Name: Money count
   m_TagString: Untagged
@@ -6400,20 +6395,6 @@ RectTransform:
   m_AnchoredPosition: {x: -206, y: -515}
   m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1871894236
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1871894234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e78bc5ff5b1b5b4eabc8677ad36b478, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  levelText: {fileID: 1871894237}
 --- !u!114 &1871894237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6473,7 +6454,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2072649027
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6694,7 +6675,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2124274965
 Transform:
   m_ObjectHideFlags: 0
@@ -6803,7 +6784,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e78bc5ff5b1b5b4eabc8677ad36b478, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   levelText: {fileID: 2142371145}
 --- !u!114 &2142371145
 MonoBehaviour:
