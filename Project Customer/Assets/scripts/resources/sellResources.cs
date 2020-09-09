@@ -1,23 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Threading;
-using UnityEngine.UI;
 using UnityEngine;
 
-public class SellResources : MonoBehaviour
+public class sellResources : MonoBehaviour
 {
     Canvas sellMenu;
     SellPrices sellPrices;
     WorldData worldData;
     PlayerInfo playerInfo;
-    WareHouse wareHouse;
+    wareHouse wareHouse;
 
     void Start()
     {
         worldData = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<WorldData>();
         playerInfo = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<PlayerInfo>();
         sellPrices = GetComponent<SellPrices>();
-        wareHouse = GetComponent<WareHouse>();
+        wareHouse = GetComponent<wareHouse>();
 
         GameObject tempObject = GameObject.Find("sellMenu");
         if (tempObject != null)

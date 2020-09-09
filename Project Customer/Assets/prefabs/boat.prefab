@@ -18,7 +18,8 @@ GameObject:
   - component: {fileID: 8829085790735745847}
   - component: {fileID: 886865640050019175}
   - component: {fileID: -7994680290498544116}
-  - component: {fileID: 421292147070599103}
+  - component: {fileID: 8753233749250456718}
+  - component: {fileID: -4173445809088682420}
   m_Layer: 0
   m_Name: boat
   m_TagString: Boat
@@ -190,7 +191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickupRange: 5
---- !u!114 &421292147070599103
+--- !u!114 &8753233749250456718
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -199,7 +200,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 8829085790735745840}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 543e8711a11cfe348a70cf8a800f89b6, type: 3}
+  m_Script: {fileID: 11500000, guid: b86c744a7a69f064292d9ec6921ff30d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventorySpace: 20
+  maxPlastic: 10
+  maxOil: 10
+  maxWood: 10
+  plasticStored: 0
+  oilStored: 0
+  woodStored: 0
+--- !u!114 &-4173445809088682420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8829085790735745840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92ea34c56cc0054489d49131f808333b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spawnDuration: 3

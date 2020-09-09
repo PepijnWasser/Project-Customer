@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnAnimation : MonoBehaviour
+public class spawnAnimation : MonoBehaviour
 {
     [Min(0)]
     public float spawnDuration;
@@ -16,7 +16,7 @@ public class SpawnAnimation : MonoBehaviour
 
     private void Update()
     {
-        if(timer < spawnDuration)
+        if (timer < spawnDuration)
         {
             timer += Time.deltaTime;
             transform.localScale = new Vector3(1, 1, 1) * (timer / spawnDuration);
