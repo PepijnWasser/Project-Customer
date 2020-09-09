@@ -8,7 +8,8 @@ public class ProgressBar : MonoBehaviour
 {
     public int minimum;
     public int maximum;
-    public int current;
+    //public int current;
+    public Transform player;
     public Image mask;
     // Start is called before the first frame update
     void Start()
@@ -23,7 +24,7 @@ public class ProgressBar : MonoBehaviour
     }
     void GetCurrentFill()
     {
-        float currentOffset = current - minimum;
+        float currentOffset = (int)player.position.z - minimum; // current - minimum
         float maximumOffset = maximum - minimum;
         float fillAmount = currentOffset / maximumOffset;
         mask.fillAmount = fillAmount;
