@@ -50,7 +50,7 @@ public class GarbagePickup : MonoBehaviour
 
                 if (piece.tag == "wood")
                 {
-                    if(woodStored + woodVolume <= maxWood && woodStored + oilStored + plasticStored + woodVolume < inventorySpace)
+                    if (woodStored + woodVolume <= maxWood && woodStored + oilStored + plasticStored + woodVolume < inventorySpace)
                     {
                         GetComponent<Inventory>().AddWood();
                         piecesToRemove.Add(piece);
@@ -71,14 +71,14 @@ public class GarbagePickup : MonoBehaviour
                         GetComponent<Inventory>().AddOil();
                         piecesToRemove.Add(piece);
                     }
-                }              
+                }
             }
         }
     }
 
     private void LateUpdate()
     {
-        foreach(GameObject piece in piecesToRemove)
+        foreach (GameObject piece in piecesToRemove)
         {
             Destroy(piece);
         }

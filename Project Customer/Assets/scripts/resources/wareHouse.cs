@@ -32,20 +32,20 @@ public class WareHouse : MonoBehaviour
 
     void Update()
     {
-        foreach(GameObject boat in GameObject.FindGameObjectsWithTag("Boat"))
+        foreach (GameObject boat in GameObject.FindGameObjectsWithTag("Boat"))
         {
-            if(boats.Contains(boat) == false)
+            if (boats.Contains(boat) == false)
             {
                 boats.Add(boat);
             }
         }
 
-        foreach(GameObject boat in boats)
+        foreach (GameObject boat in boats)
         {
-            if(Vector3.Distance(transform.position, boat.transform.position) <= wareHousePickupRange)
+            if (Vector3.Distance(transform.position, boat.transform.position) <= wareHousePickupRange)
             {
                 Inventory boatInventory = boat.GetComponent<Inventory>();
-                if(boatInventory != null)
+                if (boatInventory != null)
                 {
                     while (boatInventory.oilStored >= oilVolume)
                     {
@@ -62,7 +62,7 @@ public class WareHouse : MonoBehaviour
                         boatInventory.RemovePlastic();
                         AddPlastic();
                     }
-                }             
+                }
             }
         }
     }
