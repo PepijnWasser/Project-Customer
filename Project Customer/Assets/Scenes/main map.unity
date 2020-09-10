@@ -4084,9 +4084,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b4c5ea9f7857654e83e13c5d1087b94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  woodVolume: 0
-  plasticVolume: 0
-  oilVolume: 0
+  woodVolume: 2
+  plasticVolume: 2
+  oilVolume: 2
   mapSize: 400
 --- !u!4 &976529867
 Transform:

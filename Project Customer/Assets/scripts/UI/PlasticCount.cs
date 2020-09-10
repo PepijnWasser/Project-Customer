@@ -19,7 +19,6 @@ public class PlasticCount : MonoBehaviour
         GameObject tempObject = GameObject.Find("Plastic count");
         if (tempObject != null)
         {
-            Debug.Log(tempObject);
             plasticDisplay = tempObject.GetComponent<Text>();
             if (plasticDisplay == null)
             {
@@ -30,7 +29,6 @@ public class PlasticCount : MonoBehaviour
         GameObject tempObject2 = GameObject.Find("Money count");
         if (tempObject2 != null)
         {
-            Debug.Log(tempObject2);
             moneyDisplay = tempObject2.GetComponent<Text>();
             if (moneyDisplay == null)
             {
@@ -41,7 +39,6 @@ public class PlasticCount : MonoBehaviour
         GameObject tempObject3 = GameObject.Find("Wood count");
         if (tempObject3 != null)
         {
-            Debug.Log(tempObject3);
             woodDisplay = tempObject3.GetComponent<Text>();
             if (woodDisplay == null)
             {
