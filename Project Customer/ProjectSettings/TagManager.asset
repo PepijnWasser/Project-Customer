@@ -25,6 +25,7 @@ TagManager:
   - Floor
   - River
   - UI
+  - Refinery
   layers:
   - Default
   - TransparentFX

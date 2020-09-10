@@ -8,18 +8,14 @@ public class wareHouse : MonoBehaviour
     public int wareHousePickupRange;
 
     private int plasticVolume;
-    private int oilVolume;
     private int woodVolume;
 
     public int wareHouseInventorySpace;
     public int wareHouseMaxPlastic;
     public int wareHouseMaxWood;
-    public int wareHouseMaxOil;
 
     //[HideInInspector]
     public int plasticStored;
-    //[HideInInspector]
-    public int oilStored;
     //[HideInInspector]
     public int woodStored;
 
@@ -27,7 +23,6 @@ public class wareHouse : MonoBehaviour
     {
         plasticVolume = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<WorldData>().plasticVolume;
         woodVolume = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<WorldData>().woodVolume;
-        oilVolume = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<WorldData>().oilVolume;
     }
 
     void Update()
@@ -47,17 +42,12 @@ public class wareHouse : MonoBehaviour
                 Inventory boatInventory = boat.GetComponent<Inventory>();
                 if (boatInventory != null)
                 {
-                    while (boatInventory.oilStored >= oilVolume)
-                    {
-                        boatInventory.RemoveOil();
-                        AddOil();
-                    }
-                    while (boatInventory.woodStored >= woodVolume)
+                    while (boatInventory.woodStored >= woodVolume && woodStored + plasticStored + woodVolume <= wareHouseInventorySpace && woodStored + woodVolume < wareHouseMaxWood)
                     {
                         boatInventory.RemoveWood();
                         AddWood();
                     }
-                    while (boatInventory.plasticStored >= plasticVolume)
+                    while (boatInventory.plasticStored >= plasticVolume && woodStored + plasticStored + plasticVolume <= wareHouseInventorySpace && plasticStored + plasticVolume < wareHouseMaxPlastic)
                     {
                         boatInventory.RemovePlastic();
                         AddPlastic();
@@ -72,11 +62,6 @@ public class wareHouse : MonoBehaviour
         plasticStored += plasticVolume;
     }
 
-    void AddOil()
-    {
-        oilStored += oilVolume;
-    }
-
     void AddWood()
     {
         woodStored += woodVolume;
@@ -87,10 +72,6 @@ public class wareHouse : MonoBehaviour
         plasticStored -= plasticVolume;
     }
 
-    public void RemoveOil()
-    {
-        oilStored -= oilVolume;
-    }
     public void RemoveWood()
     {
         woodStored -= woodVolume;
