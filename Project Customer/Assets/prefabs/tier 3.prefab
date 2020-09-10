@@ -20,8 +20,9 @@ GameObject:
   - component: {fileID: 2248573518378948243}
   - component: {fileID: 1507132455980836687}
   - component: {fileID: 8642784179594916168}
+  - component: {fileID: -34229622497327333}
   m_Layer: 0
-  m_Name: Tier3Boat
+  m_Name: tier 3
   m_TagString: Boat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -147,7 +148,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b692b5adf248a5848b1212ddc2111f4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
 --- !u!114 &7238998208871731828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,3 +223,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnDuration: 2
+--- !u!114 &-34229622497327333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5476515313482587033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ca5641374b1b3946b24e78108d945cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amountOfFuelUsed: 0
