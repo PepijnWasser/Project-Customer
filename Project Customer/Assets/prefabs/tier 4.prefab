@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 4995324442800019055}
   - component: {fileID: 4403444516595234382}
   - component: {fileID: -8305291905228903665}
+  - component: {fileID: -9215908130843950500}
   m_Layer: 0
   m_Name: tier 4
   m_TagString: Boat
@@ -141,7 +142,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b692b5adf248a5848b1212ddc2111f4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
 --- !u!114 &6464951144765852813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,3 +224,16 @@ CapsuleCollider:
   m_Height: 2.8417532
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-9215908130843950500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4899880157320872447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ca5641374b1b3946b24e78108d945cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amountOfFuelUsed: 0
