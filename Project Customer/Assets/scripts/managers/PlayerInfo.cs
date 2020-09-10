@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerInfo : MonoBehaviour
 {
     public float money = 0;
+    public int fuel = 100;
 
     public void AddMoney(float amount)
     {
@@ -14,5 +15,15 @@ public class PlayerInfo : MonoBehaviour
     public void RemoveMoney(float amount)
     {
         money -= amount;
+    }
+
+    public void AddFuel(int amount)
+    {
+        fuel += amount;
+    }
+
+    public void RemoveFuel(int amount)
+    {
+        fuel -= amount;
     }
 }
