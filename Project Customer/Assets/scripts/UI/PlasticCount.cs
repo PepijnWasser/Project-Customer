@@ -14,6 +14,8 @@ public class PlasticCount : MonoBehaviour
         int plasticCount = GameObject.FindGameObjectWithTag("wareHouse").GetComponent<wareHouse>().plasticStored;
         float moneyCount = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<PlayerInfo>().money;
 
+
+
         GameObject tempObject = GameObject.Find("Plastic count");
         if (tempObject != null)
         {

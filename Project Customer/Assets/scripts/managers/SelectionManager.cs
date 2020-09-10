@@ -1,19 +1,21 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class SelectionManager : MonoBehaviour
 {
     public List<GameObject> selectedObjects = new List<GameObject>();
-    Image canvasImage;
+    Image canvacanvasImage;
 
     void Start()
     {
-        GameObject tempObject = GameObject.Find("sellAndBuyMenuImage");
+        GameObject tempObject = GameObject.Find("sellMenuImage");
         if (tempObject != null)
         {
-            canvasImage = tempObject.GetComponent<Image>();
-            if (canvasImage == null)
+            canvacanvasImage = tempObject.GetComponent<Image>();
+            if (canvacanvasImage == null)
             {
                 Debug.Log("Could not locate Image component on " + tempObject.name);
             }
@@ -34,7 +36,30 @@ public class SelectionManager : MonoBehaviour
                 {
                     GameObject objectHit = hitInfo.transform.gameObject;
                     Debug.Log(objectHit.tag);
-                    if (objectHit.tag == "Boat" || objectHit.tag == "harbor" || objectHit.tag == "wareHouse" || objectHit.tag == "Refinery")
+                    ///
+                    //boats
+                    ///
+                    if (objectHit.tag == "Boat")
+                    {
+                        Debug.Log("boat hit");
+                        DeselectAll();
+                        Select(objectHit);
+                        selectedObjects.Add(objectHit);
+                    }
+                    ///
+                    //harbor
+                    /// 
+                    else if (objectHit.tag == "harbor")
+                    {
+                        DeselectAll();
+                        Select(objectHit);
+                        selectedObjects.Add(objectHit);
+                    }
+
+                    ///
+                    //wareHouse
+                    /// 
+                    else if (objectHit.tag == "wareHouse")
                     {
                         DeselectAll();
                         Select(objectHit);
@@ -99,7 +124,7 @@ public class SelectionManager : MonoBehaviour
 
     bool TestForMenus()
     {
-        if (TestBuyMenu() || TestSellMenuWareHouse() || TestTradeMenuRefinery())
+        if (TestBuyMenu() || TestSellMenu())
         {
             return true;
         }
@@ -111,7 +136,7 @@ public class SelectionManager : MonoBehaviour
 
     bool TestBuyMenu()
     {
-        if (CheckIfTagSelected("harbor") && Input.mousePosition.x < canvasImage.rectTransform.rect.width && Input.mousePosition.y > Screen.height - canvasImage.rectTransform.rect.height)
+        if (CheckIfTagSelected("harbor") && Input.mousePosition.x < canvacanvasImage.rectTransform.rect.width && Input.mousePosition.y > Screen.height - canvacanvasImage.rectTransform.rect.height)
         {
             return true;
         }
@@ -122,21 +147,9 @@ public class SelectionManager : MonoBehaviour
 
     }
 
-    bool TestSellMenuWareHouse()
+    bool TestSellMenu()
     {
-        if (CheckIfTagSelected("wareHouse") && Input.mousePosition.x < canvasImage.rectTransform.rect.width && Input.mousePosition.y > Screen.height - canvasImage.rectTransform.rect.height)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-    
-    bool TestTradeMenuRefinery()
-    {
-        if (CheckIfTagSelected("Refinery") && Input.mousePosition.x < canvasImage.rectTransform.rect.width && Input.mousePosition.y > Screen.height - canvasImage.rectTransform.rect.height)
+        if (CheckIfTagSelected("wareHouse") && Input.mousePosition.x < canvacanvasImage.rectTransform.rect.width && Input.mousePosition.y > Screen.height - canvacanvasImage.rectTransform.rect.height)
         {
             return true;
         }
@@ -201,7 +214,6 @@ public class SelectionManager : MonoBehaviour
         DeselectSpecific("Node");
         DeselectSpecific("wareHouse");
         DeselectSpecific("harbor");
-        DeselectSpecific("Refinery");
         selectedObjects.Clear();
     }
 

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SellResourcesWareHouse : MonoBehaviour
+public class sellResources : MonoBehaviour
 {
     Canvas sellMenu;
-    SellPriceWareHouse sellPriceWareHouse;
+    SellPrices sellPrices;
     WorldData worldData;
     PlayerInfo playerInfo;
     wareHouse wareHouse;
@@ -14,10 +14,10 @@ public class SellResourcesWareHouse : MonoBehaviour
     {
         worldData = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<WorldData>();
         playerInfo = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<PlayerInfo>();
-        sellPriceWareHouse = GetComponent<SellPriceWareHouse>();
+        sellPrices = GetComponent<SellPrices>();
         wareHouse = GetComponent<wareHouse>();
 
-        GameObject tempObject = GameObject.Find("sellMenuWareHouse");
+        GameObject tempObject = GameObject.Find("sellMenu");
         if (tempObject != null)
         {
             sellMenu = tempObject.GetComponent<Canvas>();
@@ -43,7 +43,7 @@ public class SellResourcesWareHouse : MonoBehaviour
     {
         if (wareHouse.woodStored >= worldData.woodVolume)
         {
-            playerInfo.AddMoney(sellPriceWareHouse.sellPriceWood);
+            playerInfo.AddMoney(sellPrices.sellPriceWood);
             wareHouse.RemoveWood();
         }
     }
@@ -52,8 +52,17 @@ public class SellResourcesWareHouse : MonoBehaviour
     {
         if (wareHouse.plasticStored >= worldData.plasticVolume)
         {
-            playerInfo.AddMoney(sellPriceWareHouse.sellPricePlastic);
+            playerInfo.AddMoney(sellPrices.sellPricePlastic);
             wareHouse.RemovePlastic();
+        }
+    }
+
+    public void SellOil()
+    {
+        if (wareHouse.oilStored >= worldData.oilVolume)
+        {
+            playerInfo.AddMoney(sellPrices.sellPriceOil);
+            wareHouse.RemoveOil();
         }
     }
 }
