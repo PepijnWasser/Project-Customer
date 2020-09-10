@@ -24,7 +24,7 @@ public class CameraMovement : MonoBehaviour
 
     void Controls()
     {
-        Vector3 moveVec = new Vector3(Input.GetAxis("Vertical"), 0, -Input.GetAxis("Horizontal"));
+        Vector3 moveVec = new Vector3(Input.GetAxis("Vertical"), 0, -Input.GetAxis("Horizontal")).normalized;
         if (Input.GetKey(KeyCode.LeftShift))
         {
             transform.Translate(moveVec * boostSpeed * Time.deltaTime);

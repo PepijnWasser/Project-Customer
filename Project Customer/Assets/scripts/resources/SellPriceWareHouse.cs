@@ -1,31 +1,26 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-public class SellPrices : MonoBehaviour
+public class SellPriceWareHouse : MonoBehaviour
 {
     public int minSellPriceWood;
     public int maxSellPriceWood;
     public int minSellPricePlastic;
     public int maxSellPricePlastic;
-    public int minSellPriceOil;
-    public int maxSellPriceOil;
 
     [Min(30)]
     public int roughChangeTime;
 
-    private float oldSellPriceWood;
+    private float oldSellPriceWood = 1;
     [HideInInspector]
     public float sellPriceWood;
     private int targetSellPriceWood = 2;
 
-    private float oldSellPricePlastic;
+    private float oldSellPricePlastic = 1;
     [HideInInspector]
     public float sellPricePlastic;
     private int targetSellPricePlastic = 2;
-
-    private float oldSellPriceOil;
-    [HideInInspector]
-    public float sellPriceOil;
-    private int targetSellPriceOil = 2;
 
     int randomDelayWood = 0;
     private float secondcounterWood = 0;
@@ -33,15 +28,10 @@ public class SellPrices : MonoBehaviour
     int randomDelayPlastic = 0;
     private float secondcounterPlastic = 0;
 
-    int randomDelayOil = 0;
-    private float secondcounterOil = 0;
-
-
     void Update()
     {
         UpdateWoodPrice();
         UpdatePlasticPrice();
-        UpdateOilPrice();
     }
 
     void UpdateWoodPrice()
@@ -55,19 +45,6 @@ public class SellPrices : MonoBehaviour
             oldSellPriceWood = sellPriceWood;
         }
         sellPriceWood = Mathf.Lerp(oldSellPriceWood, targetSellPriceWood, secondcounterWood / (roughChangeTime + randomDelayWood));
-    }
-
-    void UpdateOilPrice()
-    {
-        secondcounterOil += Time.deltaTime;
-        if (secondcounterOil > roughChangeTime + randomDelayOil)
-        {
-            randomDelayOil = Random.Range(-30, 60);
-            secondcounterOil = 0;
-            targetSellPriceOil = Random.Range(minSellPriceOil, maxSellPriceOil);
-            oldSellPriceOil = sellPriceOil;
-        }
-        sellPriceOil = Mathf.Lerp(oldSellPriceOil, targetSellPriceOil, secondcounterOil / (roughChangeTime + randomDelayOil));
     }
 
     void UpdatePlasticPrice()
