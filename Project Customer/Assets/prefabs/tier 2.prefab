@@ -20,8 +20,9 @@ GameObject:
   - component: {fileID: 4930012242757154787}
   - component: {fileID: 5639370168847066903}
   - component: {fileID: 2632810292286260895}
+  - component: {fileID: -6379456868506352580}
   m_Layer: 0
-  m_Name: Tier2
+  m_Name: tier 2
   m_TagString: Boat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -176,7 +177,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b692b5adf248a5848b1212ddc2111f4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
 --- !u!114 &4930012242757154787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,3 +223,16 @@ MonoBehaviour:
   plasticStored: 0
   oilStored: 0
   woodStored: 0
+--- !u!114 &-6379456868506352580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2250085573224712174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ca5641374b1b3946b24e78108d945cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amountOfFuelUsed: 0
