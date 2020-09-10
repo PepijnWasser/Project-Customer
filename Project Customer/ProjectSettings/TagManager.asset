@@ -26,6 +26,7 @@ TagManager:
   - River
   - UI
   - Refinery
+  - Camera Pivot
   layers:
   - Default
   - TransparentFX
