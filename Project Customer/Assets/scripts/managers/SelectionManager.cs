@@ -1,21 +1,19 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Reflection;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class SelectionManager : MonoBehaviour
 {
     public List<GameObject> selectedObjects = new List<GameObject>();
-    Image canvacanvasImage;
+    Image canvasImage;
 
     void Start()
     {
-        GameObject tempObject = GameObject.Find("sellMenuImage");
+        GameObject tempObject = GameObject.Find("sellAndBuyMenuImage");
         if (tempObject != null)
         {
-            canvacanvasImage = tempObject.GetComponent<Image>();
-            if (canvacanvasImage == null)
+            canvasImage = tempObject.GetComponent<Image>();
+            if (canvasImage == null)
             {
                 Debug.Log("Could not locate Image component on " + tempObject.name);
             }
@@ -24,107 +22,86 @@ public class SelectionManager : MonoBehaviour
 
     void Update()
     {
-        
-        if (Input.GetMouseButtonDown(0))
+        if (GameObject.FindGameObjectWithTag("Camera Pivot").GetComponent<ChangeCamera>().camMode == ChangeCamera.CamMode.tilted)
         {
-            // do nothing while on sell menu
-            if(TestForMenus() == false)
+            if (Input.GetMouseButtonDown(0))
             {
-                RaycastHit hitInfo = new RaycastHit();
-                bool hit = Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo);
-                if (hit)
+                // do nothing while on sell menu
+                if (TestForMenus() == false)
                 {
-                    GameObject objectHit = hitInfo.transform.gameObject;
-                    Debug.Log(objectHit.tag);
-                    ///
-                    //boats
-                    ///
-                    if (objectHit.tag == "Boat")
+                    RaycastHit hitInfo = new RaycastHit();
+                    bool hit = Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo);
+                    if (hit)
                     {
-                        Debug.Log("boat hit");
-                        DeselectAll();
-                        Select(objectHit);
-                        selectedObjects.Add(objectHit);
-                    }
-                    ///
-                    //harbor
-                    /// 
-                    else if (objectHit.tag == "harbor")
-                    {
-                        DeselectAll();
-                        Select(objectHit);
-                        selectedObjects.Add(objectHit);
-                    }
-
-                    ///
-                    //wareHouse
-                    /// 
-                    else if (objectHit.tag == "wareHouse")
-                    {
-                        DeselectAll();
-                        Select(objectHit);
-                        selectedObjects.Add(objectHit);
-                    }
-                    ///
-                    //nodes
-                    ///
-                    else if (objectHit.tag == "Node")
-                    {
-                        if (CheckIfTagSelected("Boat"))
+                        GameObject objectHit = hitInfo.transform.gameObject;
+                        Debug.Log(objectHit.tag);
+                        if (objectHit.tag == "Boat" || objectHit.tag == "harbor" || objectHit.tag == "wareHouse" || objectHit.tag == "Refinery")
                         {
-                            Debug.Log("there is a boat selected");
-                            if (CheckIfBoatIsNodeParent(GetObjectsWithTag("Boat"), objectHit))
+                            DeselectAll();
+                            Select(objectHit);
+                            selectedObjects.Add(objectHit);
+                        }
+                        ///
+                        //nodes
+                        ///
+                        else if (objectHit.tag == "Node")
+                        {
+                            if (CheckIfTagSelected("Boat"))
                             {
-                                Debug.Log("the boat corresponds to the node");
-                                if (CheckIfTagSelected("Node"))
+                                Debug.Log("there is a boat selected");
+                                if (CheckIfBoatIsNodeParent(GetObjectsWithTag("Boat"), objectHit))
                                 {
-                                    Debug.Log("there is another node selected");
-                                    DeselectSpecific("Node");
-                                    Select(objectHit);
-                                    selectedObjects.Add(objectHit);
+                                    Debug.Log("the boat corresponds to the node");
+                                    if (CheckIfTagSelected("Node"))
+                                    {
+                                        Debug.Log("there is another node selected");
+                                        DeselectSpecific("Node");
+                                        Select(objectHit);
+                                        selectedObjects.Add(objectHit);
+                                    }
+                                    else
+                                    {
+                                        Debug.Log("there is no other node selected");
+                                        Select(objectHit);
+                                        selectedObjects.Add(objectHit);
+                                    }
                                 }
                                 else
                                 {
-                                    Debug.Log("there is no other node selected");
+                                    Debug.Log("the boat is not corresponding with the node");
+                                    DeselectAll();
                                     Select(objectHit);
                                     selectedObjects.Add(objectHit);
                                 }
                             }
                             else
                             {
-                                Debug.Log("the boat is not corresponding with the node");
+                                Debug.Log("there is no boat selected");
                                 DeselectAll();
                                 Select(objectHit);
                                 selectedObjects.Add(objectHit);
                             }
                         }
+                        ///
+                        //else
+                        ///
                         else
                         {
-                            Debug.Log("there is no boat selected");
                             DeselectAll();
-                            Select(objectHit);
-                            selectedObjects.Add(objectHit);
                         }
                     }
-                    ///
-                    //else
-                    ///
                     else
                     {
-                        DeselectAll();
+                        Debug.Log("No hit");
                     }
                 }
-                else
-                {
-                    Debug.Log("No hit");
-                }
             }
-        }                  
+        }
     }
 
     bool TestForMenus()
     {
-        if (TestBuyMenu() || TestSellMenu())
+        if (TestBuyMenu() || TestSellMenuWareHouse() || TestTradeMenuRefinery())
         {
             return true;
         }
@@ -136,7 +113,7 @@ public class SelectionManager : MonoBehaviour
 
     bool TestBuyMenu()
     {
-        if (CheckIfTagSelected("harbor") && Input.mousePosition.x < canvacanvasImage.rectTransform.rect.width && Input.mousePosition.y > Screen.height - canvacanvasImage.rectTransform.rect.height)
+        if (CheckIfTagSelected("harbor") && Input.mousePosition.x < canvasImage.rectTransform.rect.width && Input.mousePosition.y > Screen.height - canvasImage.rectTransform.rect.height)
         {
             return true;
         }
@@ -147,9 +124,21 @@ public class SelectionManager : MonoBehaviour
 
     }
 
-    bool TestSellMenu()
+    bool TestSellMenuWareHouse()
     {
-        if (CheckIfTagSelected("wareHouse") && Input.mousePosition.x < canvacanvasImage.rectTransform.rect.width && Input.mousePosition.y > Screen.height - canvacanvasImage.rectTransform.rect.height)
+        if (CheckIfTagSelected("wareHouse") && Input.mousePosition.x < canvasImage.rectTransform.rect.width && Input.mousePosition.y > Screen.height - canvasImage.rectTransform.rect.height)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    
+    bool TestTradeMenuRefinery()
+    {
+        if (CheckIfTagSelected("Refinery") && Input.mousePosition.x < canvasImage.rectTransform.rect.width && Input.mousePosition.y > Screen.height - canvasImage.rectTransform.rect.height)
         {
             return true;
         }
@@ -214,6 +203,7 @@ public class SelectionManager : MonoBehaviour
         DeselectSpecific("Node");
         DeselectSpecific("wareHouse");
         DeselectSpecific("harbor");
+        DeselectSpecific("Refinery");
         selectedObjects.Clear();
     }
 

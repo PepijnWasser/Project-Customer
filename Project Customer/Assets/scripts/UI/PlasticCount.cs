@@ -8,18 +8,34 @@ public class PlasticCount : MonoBehaviour
     Text woodDisplay;
     Text moneyDisplay;
 
+    int woodCount;
+    int plasticCount;
+    float moneyCount;
+
+
+    private void Start()
+    {
+        GetTextElements();
+    }
+
     void Update()
     {
-        int woodCount = GameObject.FindGameObjectWithTag("wareHouse").GetComponent<wareHouse>().woodStored;
-        int plasticCount = GameObject.FindGameObjectWithTag("wareHouse").GetComponent<wareHouse>().plasticStored;
-        float moneyCount = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<PlayerInfo>().money;
+        LinkCountsWithValue();
+        UpdateHUD();        
+    }
 
+    void LinkCountsWithValue()
+    {
+        woodCount = GameObject.FindGameObjectWithTag("wareHouse").GetComponent<wareHouse>().woodStored;
+        plasticCount = GameObject.FindGameObjectWithTag("wareHouse").GetComponent<wareHouse>().plasticStored;
+        moneyCount = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<PlayerInfo>().money;
+    }
 
-
+    void GetTextElements()
+    {
         GameObject tempObject = GameObject.Find("Plastic count");
         if (tempObject != null)
         {
-            Debug.Log(tempObject);
             plasticDisplay = tempObject.GetComponent<Text>();
             if (plasticDisplay == null)
             {
@@ -30,7 +46,6 @@ public class PlasticCount : MonoBehaviour
         GameObject tempObject2 = GameObject.Find("Money count");
         if (tempObject2 != null)
         {
-            Debug.Log(tempObject2);
             moneyDisplay = tempObject2.GetComponent<Text>();
             if (moneyDisplay == null)
             {
@@ -41,7 +56,6 @@ public class PlasticCount : MonoBehaviour
         GameObject tempObject3 = GameObject.Find("Wood count");
         if (tempObject3 != null)
         {
-            Debug.Log(tempObject3);
             woodDisplay = tempObject3.GetComponent<Text>();
             if (woodDisplay == null)
             {
@@ -49,12 +63,14 @@ public class PlasticCount : MonoBehaviour
 
             }
         }
+    }
 
+    void UpdateHUD()
+    {
         if (plasticDisplay != null)
         {
             plasticDisplay.text = plasticCount.ToString();
         }
-
         if (woodDisplay != null)
         {
             woodDisplay.text = ((int)woodCount).ToString();
@@ -63,8 +79,6 @@ public class PlasticCount : MonoBehaviour
         {
             moneyDisplay.text = ((int)moneyCount).ToString();
         }
-
-
     }
 }
 

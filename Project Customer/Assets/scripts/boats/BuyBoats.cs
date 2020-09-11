@@ -48,7 +48,9 @@ public class BuyBoats : MonoBehaviour
         if(playerInfo.money >= smallBoatPrice)
         {
             playerInfo.RemoveMoney(smallBoatPrice);
+            Debug.Log("mark1");
             GameObject newBoat = Instantiate(smallBoat, transform.position + new Vector3(5, 0, 0), Quaternion.identity);
+            Debug.Log("mark2");        
         }
     }
 

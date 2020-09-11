@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: 915229343516554472}
   - component: {fileID: 6469675655212728229}
   - component: {fileID: 1743113931857660216}
-  - component: {fileID: 8291018343608830202}
+  - component: {fileID: -4392999995526664387}
   m_Layer: 0
   m_Name: tier 1
   m_TagString: Boat
@@ -223,7 +223,7 @@ MonoBehaviour:
   selected: 0
   selectedMaterial: {fileID: 2100000, guid: dc109a39fc635b54c8fa8e151b6e35dd, type: 2}
   notSelectedMaterial: {fileID: 2100000, guid: cdefd3e3c33b49e408e350253bd7a704, type: 2}
---- !u!114 &8291018343608830202
+--- !u!114 &-4392999995526664387
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -235,5 +235,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ca5641374b1b3946b24e78108d945cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  usesFuel: 0
   amountOfFuelUsed: 0
