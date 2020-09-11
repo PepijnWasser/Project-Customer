@@ -52,7 +52,9 @@ public class SellResourcesRefinery : MonoBehaviour
 
     public void TradeOilToFuel()
     {
-        if (refinery.oilStored >= worldData.oilVolume)
+
+        if (refinery.oilStored >= worldData.oilVolume && playerInfo.fuel + worldData.oilVolume < worldData.maxFuel)
+
         {
             refinery.RemoveOil();
             playerInfo.AddFuel(worldData.oilVolume * convertionRatio);
