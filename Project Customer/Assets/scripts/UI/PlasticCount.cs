@@ -8,12 +8,31 @@ public class PlasticCount : MonoBehaviour
     Text woodDisplay;
     Text moneyDisplay;
 
+    int woodCount;
+    int plasticCount;
+    float moneyCount;
+
+
+    private void Start()
+    {
+        GetTextElements();
+    }
+
     void Update()
     {
-        int woodCount = GameObject.FindGameObjectWithTag("wareHouse").GetComponent<wareHouse>().woodStored;
-        int plasticCount = GameObject.FindGameObjectWithTag("wareHouse").GetComponent<wareHouse>().plasticStored;
-        float moneyCount = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<PlayerInfo>().money;
+        LinkCountsWithValue();
+        UpdateHUD();        
+    }
 
+    void LinkCountsWithValue()
+    {
+        woodCount = GameObject.FindGameObjectWithTag("wareHouse").GetComponent<wareHouse>().woodStored;
+        plasticCount = GameObject.FindGameObjectWithTag("wareHouse").GetComponent<wareHouse>().plasticStored;
+        moneyCount = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<PlayerInfo>().money;
+    }
+
+    void GetTextElements()
+    {
         GameObject tempObject = GameObject.Find("Plastic count");
         if (tempObject != null)
         {
@@ -44,12 +63,14 @@ public class PlasticCount : MonoBehaviour
 
             }
         }
+    }
 
+    void UpdateHUD()
+    {
         if (plasticDisplay != null)
         {
             plasticDisplay.text = plasticCount.ToString();
         }
-
         if (woodDisplay != null)
         {
             woodDisplay.text = ((int)woodCount).ToString();
@@ -58,8 +79,6 @@ public class PlasticCount : MonoBehaviour
         {
             moneyDisplay.text = ((int)moneyCount).ToString();
         }
-
-
     }
 }
 
