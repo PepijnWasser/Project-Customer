@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GameOverManager : MonoBehaviour
 {
@@ -30,7 +29,7 @@ public class GameOverManager : MonoBehaviour
 
         if (amountOfGarbage > maxGarbage)
         {
-            SceneManager.LoadScene("end menu");
+            //switch screens
         }
     }
 
@@ -40,7 +39,7 @@ public class GameOverManager : MonoBehaviour
 
         if(amountOfFuel <= 0)
         {
-            SceneManager.LoadScene("RestartScreen");
+            //switch screen
         }
     }
 }

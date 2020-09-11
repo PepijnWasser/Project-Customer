@@ -12,10 +12,8 @@ public class SellPriceRefinery : MonoBehaviour
 
     private float oldSellPriceOil = 1;
     [HideInInspector]
-
     public float sellPriceOil = 2;
     private int targetSellPriceOil;
-
 
 
     int randomDelayOil = 0;
