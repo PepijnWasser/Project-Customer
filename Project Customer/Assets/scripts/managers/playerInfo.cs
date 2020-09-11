@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerInfo : MonoBehaviour
 {
     public float money = 0;
-    public int fuel = 100;
+    public int fuel;
 
     public void AddMoney(float amount)
     {

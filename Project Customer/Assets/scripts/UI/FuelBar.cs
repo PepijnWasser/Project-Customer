@@ -12,7 +12,6 @@ public class FuelBar : MonoBehaviour
 
     void Start()
     {
-        fuel = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<PlayerInfo>().fuel;
         maximumOilStored = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<WorldData>().maxFuel;
     }
 
@@ -22,6 +21,7 @@ public class FuelBar : MonoBehaviour
     }
     void GetCurrentFill()
     {
-        mask.fillAmount = fuel / maximumOilStored;
+        fuel = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<PlayerInfo>().fuel;
+        mask.fillAmount = (float)fuel / (float)maximumOilStored;
     }
 }
