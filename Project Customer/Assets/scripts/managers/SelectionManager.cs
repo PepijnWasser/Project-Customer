@@ -6,7 +6,6 @@ public class SelectionManager : MonoBehaviour
 {
     public List<GameObject> selectedObjects = new List<GameObject>();
     Image canvasImage;
-    ChangeCamera cam;
 
     void Start()
     {
@@ -23,88 +22,82 @@ public class SelectionManager : MonoBehaviour
 
     void Update()
     {
-        cam = GameObject.FindGameObjectWithTag("Camera Pivot").GetComponent<ChangeCamera>();
-
-        if(cam != null)
+        if (GameObject.FindGameObjectWithTag("Camera Pivot").GetComponent<ChangeCamera>().camMode == ChangeCamera.CamMode.tilted)
         {
-            if (cam.camMode == ChangeCamera.CamMode.tilted)
+            if (Input.GetMouseButtonDown(0))
             {
-                if (Input.GetMouseButtonDown(0))
+                // do nothing while on sell menu
+                if (TestForMenus() == false)
                 {
-                    // do nothing while on sell menu
-                    if (TestForMenus() == false)
+                    RaycastHit hitInfo = new RaycastHit();
+                    bool hit = Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo);
+                    if (hit)
                     {
-                        RaycastHit hitInfo = new RaycastHit();
-                        bool hit = Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo);
-                        if (hit)
+                        GameObject objectHit = hitInfo.transform.gameObject;
+                        Debug.Log(objectHit.tag);
+                        if (objectHit.tag == "Boat" || objectHit.tag == "harbor" || objectHit.tag == "wareHouse" || objectHit.tag == "Refinery")
                         {
-                            GameObject objectHit = hitInfo.transform.gameObject;
-                            Debug.Log(objectHit.tag);
-                            if (objectHit.tag == "Boat" || objectHit.tag == "harbor" || objectHit.tag == "wareHouse" || objectHit.tag == "Refinery")
+                            DeselectAll();
+                            Select(objectHit);
+                            selectedObjects.Add(objectHit);
+                        }
+                        ///
+                        //nodes
+                        ///
+                        else if (objectHit.tag == "Node")
+                        {
+                            if (CheckIfTagSelected("Boat"))
                             {
-                                DeselectAll();
-                                Select(objectHit);
-                                selectedObjects.Add(objectHit);
-                            }
-                            ///
-                            //nodes
-                            ///
-                            else if (objectHit.tag == "Node")
-                            {
-                                if (CheckIfTagSelected("Boat"))
+                                Debug.Log("there is a boat selected");
+                                if (CheckIfBoatIsNodeParent(GetObjectsWithTag("Boat"), objectHit))
                                 {
-                                    Debug.Log("there is a boat selected");
-                                    if (CheckIfBoatIsNodeParent(GetObjectsWithTag("Boat"), objectHit))
+                                    Debug.Log("the boat corresponds to the node");
+                                    if (CheckIfTagSelected("Node"))
                                     {
-                                        Debug.Log("the boat corresponds to the node");
-                                        if (CheckIfTagSelected("Node"))
-                                        {
-                                            Debug.Log("there is another node selected");
-                                            DeselectSpecific("Node");
-                                            Select(objectHit);
-                                            selectedObjects.Add(objectHit);
-                                        }
-                                        else
-                                        {
-                                            Debug.Log("there is no other node selected");
-                                            Select(objectHit);
-                                            selectedObjects.Add(objectHit);
-                                        }
+                                        Debug.Log("there is another node selected");
+                                        DeselectSpecific("Node");
+                                        Select(objectHit);
+                                        selectedObjects.Add(objectHit);
                                     }
                                     else
                                     {
-                                        Debug.Log("the boat is not corresponding with the node");
-                                        DeselectAll();
+                                        Debug.Log("there is no other node selected");
                                         Select(objectHit);
                                         selectedObjects.Add(objectHit);
                                     }
                                 }
                                 else
                                 {
-                                    Debug.Log("there is no boat selected");
+                                    Debug.Log("the boat is not corresponding with the node");
                                     DeselectAll();
                                     Select(objectHit);
                                     selectedObjects.Add(objectHit);
                                 }
                             }
-                            ///
-                            //else
-                            ///
                             else
                             {
+                                Debug.Log("there is no boat selected");
                                 DeselectAll();
+                                Select(objectHit);
+                                selectedObjects.Add(objectHit);
                             }
                         }
+                        ///
+                        //else
+                        ///
                         else
                         {
-                            Debug.Log("No hit");
+                            DeselectAll();
                         }
+                    }
+                    else
+                    {
+                        Debug.Log("No hit");
                     }
                 }
             }
         }
     }
-      
 
     bool TestForMenus()
     {
