@@ -24,4 +24,9 @@ public class SwitchScenes : MonoBehaviour
     {
         SceneManager.LoadScene("StartScreen");
     }
+
+    public void LoadTutorial()
+    {
+        SceneManager.LoadScene("Tutorial");
+    }
 }
