@@ -12,13 +12,8 @@ public class SellPriceRefinery : MonoBehaviour
 
     private float oldSellPriceOil = 1;
     [HideInInspector]
-<<<<<<< HEAD
     public float sellPriceOil;
     private int targetSellPriceOil = 2;
-=======
-    public float sellPriceOil = 2;
-    private int targetSellPriceOil;
->>>>>>> parent of 607d604... Revert "proj luc"
 
 
     int randomDelayOil = 0;

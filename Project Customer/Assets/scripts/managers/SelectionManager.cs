@@ -6,10 +6,7 @@ public class SelectionManager : MonoBehaviour
 {
     public List<GameObject> selectedObjects = new List<GameObject>();
     Image canvasImage;
-<<<<<<< HEAD
     ChangeCamera cam;
-=======
->>>>>>> parent of 607d604... Revert "proj luc"
 
     void Start()
     {
@@ -26,7 +23,6 @@ public class SelectionManager : MonoBehaviour
 
     void Update()
     {
-<<<<<<< HEAD
         cam = GameObject.FindGameObjectWithTag("Camera Pivot").GetComponent<ChangeCamera>();
 
         if(cam != null)
@@ -79,65 +75,18 @@ public class SelectionManager : MonoBehaviour
                                     {
                                         Debug.Log("the boat is not corresponding with the node");
                                         DeselectAll();
-=======
-        if (GameObject.FindGameObjectWithTag("Camera Pivot").GetComponent<ChangeCamera>().camMode == ChangeCamera.CamMode.tilted)
-        {
-            if (Input.GetMouseButtonDown(0))
-            {
-                // do nothing while on sell menu
-                if (TestForMenus() == false)
-                {
-                    RaycastHit hitInfo = new RaycastHit();
-                    bool hit = Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo);
-                    if (hit)
-                    {
-                        GameObject objectHit = hitInfo.transform.gameObject;
-                        Debug.Log(objectHit.tag);
-                        if (objectHit.tag == "Boat" || objectHit.tag == "harbor" || objectHit.tag == "wareHouse" || objectHit.tag == "Refinery")
-                        {
-                            DeselectAll();
-                            Select(objectHit);
-                            selectedObjects.Add(objectHit);
-                        }
-                        ///
-                        //nodes
-                        ///
-                        else if (objectHit.tag == "Node")
-                        {
-                            if (CheckIfTagSelected("Boat"))
-                            {
-                                Debug.Log("there is a boat selected");
-                                if (CheckIfBoatIsNodeParent(GetObjectsWithTag("Boat"), objectHit))
-                                {
-                                    Debug.Log("the boat corresponds to the node");
-                                    if (CheckIfTagSelected("Node"))
-                                    {
-                                        Debug.Log("there is another node selected");
-                                        DeselectSpecific("Node");
-                                        Select(objectHit);
-                                        selectedObjects.Add(objectHit);
-                                    }
-                                    else
-                                    {
-                                        Debug.Log("there is no other node selected");
->>>>>>> parent of 607d604... Revert "proj luc"
+
                                         Select(objectHit);
                                         selectedObjects.Add(objectHit);
                                     }
                                 }
                                 else
                                 {
-<<<<<<< HEAD
-                                    Debug.Log("there is no boat selected");
-=======
-                                    Debug.Log("the boat is not corresponding with the node");
->>>>>>> parent of 607d604... Revert "proj luc"
                                     DeselectAll();
                                     Select(objectHit);
                                     selectedObjects.Add(objectHit);
                                 }
                             }
-<<<<<<< HEAD
                             ///
                             //else
                             ///
@@ -151,36 +100,11 @@ public class SelectionManager : MonoBehaviour
                             Debug.Log("No hit");
                         }
                     }
-=======
-                            else
-                            {
-                                Debug.Log("there is no boat selected");
-                                DeselectAll();
-                                Select(objectHit);
-                                selectedObjects.Add(objectHit);
-                            }
-                        }
-                        ///
-                        //else
-                        ///
-                        else
-                        {
-                            DeselectAll();
-                        }
-                    }
-                    else
-                    {
-                        Debug.Log("No hit");
-                    }
->>>>>>> parent of 607d604... Revert "proj luc"
+
                 }
             }
         }
     }
-<<<<<<< HEAD
-      
-=======
->>>>>>> parent of 607d604... Revert "proj luc"
 
     bool TestForMenus()
     {

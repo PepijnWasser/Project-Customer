@@ -78,10 +78,6 @@ public class BuyBoats : MonoBehaviour
         {
             playerInfo.RemoveMoney(hugeBoatPrice);
             GameObject newBoat = Instantiate(hugeBoat, transform.position + new Vector3(5, 0, 0), Quaternion.identity);
-<<<<<<< HEAD
-=======
-            Debug.Log("groote boot");
->>>>>>> parent of 607d604... Revert "proj luc"
         }
     }
 }

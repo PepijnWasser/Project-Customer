@@ -11,7 +11,7 @@ public class ChangeCamera : MonoBehaviour
     };
 
     public CamMode camMode = CamMode.tilted;
-<<<<<<< HEAD
+
     Camera topDown;
     Camera tilted;
 
@@ -20,10 +20,6 @@ public class ChangeCamera : MonoBehaviour
         tilted = GameObject.Find("tilted").GetComponent<Camera>();
         topDown = GameObject.Find("top down").GetComponent<Camera>();
     }
-=======
-    public Camera topDown;
-    public Camera tilted;
->>>>>>> parent of 607d604... Revert "proj luc"
 
     void Update()
     {
@@ -41,7 +37,6 @@ public class ChangeCamera : MonoBehaviour
 
         if(camMode == CamMode.tilted)
         {
-<<<<<<< HEAD
             tilted.enabled = true;
             topDown.enabled = false;
         }
@@ -49,15 +44,7 @@ public class ChangeCamera : MonoBehaviour
         {
             tilted.enabled = false;
             topDown.enabled = true;
-=======
-            tilted.enabled = false;
-            topDown.enabled = true;
-        }
-        if(camMode == CamMode.topDown)
-        {
-            tilted.enabled = true;
-            topDown.enabled = false;
->>>>>>> parent of 607d604... Revert "proj luc"
+
         }
     }
 }

@@ -12,9 +12,6 @@ public class WorldData : MonoBehaviour
     public int oilVolume = 1;
     [Min(10)]
     public int mapSize = 10;
-<<<<<<< HEAD
     [Min(10)]
     public int maxFuel = 100;
-=======
->>>>>>> parent of 607d604... Revert "proj luc"
 }

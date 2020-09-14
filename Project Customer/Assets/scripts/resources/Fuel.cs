@@ -18,11 +18,7 @@ public class Fuel : MonoBehaviour
     void Update()
     {
         secondCounter += Time.deltaTime;
-<<<<<<< HEAD
         if (secondCounter > 5)
-=======
-        if (secondCounter > 1)
->>>>>>> parent of 607d604... Revert "proj luc"
         {
             secondCounter = 0;
             playerInfo.RemoveFuel(amountOfFuelUsed);

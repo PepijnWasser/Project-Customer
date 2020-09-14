@@ -1720,8 +1720,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camMode: 0
-  topDown: {fileID: 753296710}
-  tilted: {fileID: 633103640}
 --- !u!1 &263773572
 GameObject:
   m_ObjectHideFlags: 0
@@ -4600,11 +4598,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 976529860}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3902380446b9f24a9bdc161459b35c4, type: 3}
+  m_Script: {fileID: 11500000, guid: 957781c4550cf2d459040fffd549c403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   money: 200
-  fuel: 0
+  fuel: 100
 --- !u!114 &976529864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4652,6 +4650,7 @@ MonoBehaviour:
   plasticVolume: 1
   oilVolume: 1
   mapSize: 400
+  maxFuel: 100
 --- !u!4 &976529867
 Transform:
   m_ObjectHideFlags: 0

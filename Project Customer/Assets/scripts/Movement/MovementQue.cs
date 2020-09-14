@@ -26,11 +26,8 @@ public class MovementQue : MonoBehaviour
 
     void CheckForQueChange()
     {
-<<<<<<< HEAD
+
         if (selected == true && GameObject.FindGameObjectWithTag("Camera Pivot").GetComponent<ChangeCamera>().camMode == ChangeCamera.CamMode.tilted)
-=======
-        if (selected == true)
->>>>>>> parent of 607d604... Revert "proj luc"
         {
             if (Input.GetMouseButtonDown(1))
             {
