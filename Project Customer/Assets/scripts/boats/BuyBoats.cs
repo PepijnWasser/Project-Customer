@@ -78,6 +78,7 @@ public class BuyBoats : MonoBehaviour
         {
             playerInfo.RemoveMoney(hugeBoatPrice);
             GameObject newBoat = Instantiate(hugeBoat, transform.position + new Vector3(5, 0, 0), Quaternion.identity);
+            Debug.Log("groote boot");
         }
     }
 }

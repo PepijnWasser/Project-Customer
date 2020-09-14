@@ -12,6 +12,4 @@ public class WorldData : MonoBehaviour
     public int oilVolume = 1;
     [Min(10)]
     public int mapSize = 10;
-    [Min(10)]
-    public int maxFuel = 100;
 }
