@@ -236,4 +236,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ca5641374b1b3946b24e78108d945cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountOfFuelUsed: 7
+  amountOfFuelUsed: 3

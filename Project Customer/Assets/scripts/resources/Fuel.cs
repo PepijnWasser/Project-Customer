@@ -18,7 +18,7 @@ public class Fuel : MonoBehaviour
     void Update()
     {
         secondCounter += Time.deltaTime;
-        if (secondCounter > 1)
+        if (secondCounter > 5)
         {
             secondCounter = 0;
             playerInfo.RemoveFuel(amountOfFuelUsed);

@@ -11,8 +11,14 @@ public class ChangeCamera : MonoBehaviour
     };
 
     public CamMode camMode = CamMode.tilted;
-    public Camera topDown;
-    public Camera tilted;
+    Camera topDown;
+    Camera tilted;
+
+    private void Start()
+    {
+        tilted = GameObject.Find("tilted").GetComponent<Camera>();
+        topDown = GameObject.Find("top down").GetComponent<Camera>();
+    }
 
     void Update()
     {
@@ -30,13 +36,13 @@ public class ChangeCamera : MonoBehaviour
 
         if(camMode == CamMode.tilted)
         {
-            tilted.enabled = false;
-            topDown.enabled = true;
+            tilted.enabled = true;
+            topDown.enabled = false;
         }
         if(camMode == CamMode.topDown)
         {
-            tilted.enabled = true;
-            topDown.enabled = false;
+            tilted.enabled = false;
+            topDown.enabled = true;
         }
     }
 }
