@@ -7,10 +7,18 @@ public class PlasticCount : MonoBehaviour
     Text plasticDisplay;
     Text woodDisplay;
     Text moneyDisplay;
+<<<<<<< HEAD
+=======
+    Text oilDisplay;
+>>>>>>> parent of 607d604... Revert "proj luc"
 
     int woodCount;
     int plasticCount;
     float moneyCount;
+<<<<<<< HEAD
+=======
+    int oilCount;
+>>>>>>> parent of 607d604... Revert "proj luc"
 
 
     private void Start()
@@ -29,6 +37,10 @@ public class PlasticCount : MonoBehaviour
         woodCount = GameObject.FindGameObjectWithTag("wareHouse").GetComponent<wareHouse>().woodStored;
         plasticCount = GameObject.FindGameObjectWithTag("wareHouse").GetComponent<wareHouse>().plasticStored;
         moneyCount = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<PlayerInfo>().money;
+<<<<<<< HEAD
+=======
+        oilCount = GameObject.FindGameObjectWithTag("Refinery").GetComponent<Refinery>().oilStored;
+>>>>>>> parent of 607d604... Revert "proj luc"
     }
 
     void GetTextElements()
@@ -63,6 +75,19 @@ public class PlasticCount : MonoBehaviour
 
             }
         }
+<<<<<<< HEAD
+=======
+        GameObject tempObject4 = GameObject.Find("Oil count");
+        if (tempObject4 != null)
+        {
+            oilDisplay = tempObject4.GetComponent<Text>();
+            if (oilDisplay == null)
+            {
+                Debug.Log("Could not locate Canvas component on " + tempObject4.name);
+
+            }
+        }
+>>>>>>> parent of 607d604... Revert "proj luc"
     }
 
     void UpdateHUD()
@@ -73,12 +98,23 @@ public class PlasticCount : MonoBehaviour
         }
         if (woodDisplay != null)
         {
+<<<<<<< HEAD
             woodDisplay.text = ((int)woodCount).ToString();
+=======
+            woodDisplay.text = woodCount.ToString();
+>>>>>>> parent of 607d604... Revert "proj luc"
         }
         if (moneyDisplay != null)
         {
             moneyDisplay.text = ((int)moneyCount).ToString();
         }
+<<<<<<< HEAD
+=======
+        if (oilDisplay != null)
+        {
+            oilDisplay.text = oilCount.ToString();
+        }
+>>>>>>> parent of 607d604... Revert "proj luc"
     }
 }
 

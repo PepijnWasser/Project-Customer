@@ -52,7 +52,11 @@ public class SellResourcesRefinery : MonoBehaviour
 
     public void TradeOilToFuel()
     {
+<<<<<<< HEAD
         if (refinery.oilStored >= worldData.oilVolume && playerInfo.fuel + worldData.oilVolume < worldData.maxFuel)
+=======
+        if (refinery.oilStored >= worldData.oilVolume)
+>>>>>>> parent of 607d604... Revert "proj luc"
         {
             refinery.RemoveOil();
             playerInfo.AddFuel(worldData.oilVolume * convertionRatio);

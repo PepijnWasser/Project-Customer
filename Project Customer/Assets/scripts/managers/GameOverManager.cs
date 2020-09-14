@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+<<<<<<< HEAD
 using UnityEngine.SceneManagement;
+=======
+>>>>>>> parent of 607d604... Revert "proj luc"
 
 public class GameOverManager : MonoBehaviour
 {
@@ -30,7 +33,11 @@ public class GameOverManager : MonoBehaviour
 
         if (amountOfGarbage > maxGarbage)
         {
+<<<<<<< HEAD
             SceneManager.LoadScene("end menu");
+=======
+            //switch screens
+>>>>>>> parent of 607d604... Revert "proj luc"
         }
     }
 
@@ -40,7 +47,11 @@ public class GameOverManager : MonoBehaviour
 
         if(amountOfFuel <= 0)
         {
+<<<<<<< HEAD
             SceneManager.LoadScene("RestartScreen");
+=======
+            //switch screen
+>>>>>>> parent of 607d604... Revert "proj luc"
         }
     }
 }

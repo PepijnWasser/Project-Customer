@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 957781c4550cf2d459040fffd549c403
+=======
+guid: a3902380446b9f24a9bdc161459b35c4
+>>>>>>> parent of 607d604... Revert "proj luc"
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
