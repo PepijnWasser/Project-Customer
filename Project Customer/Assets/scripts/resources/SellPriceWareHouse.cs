@@ -17,9 +17,9 @@ public class SellPriceWareHouse : MonoBehaviour
     public float sellPriceWood;
     private int targetSellPriceWood = 2;
 
-    private float oldSellPricePlastic = 1;
+    private float oldSellPricePlastic = 2;
     [HideInInspector]
-    public float sellPricePlastic;
+    public float sellPricePlastic = 2;
     private int targetSellPricePlastic = 2;
 
     int randomDelayWood = 0;
