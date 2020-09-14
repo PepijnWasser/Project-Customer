@@ -7,10 +7,12 @@ public class PlasticCount : MonoBehaviour
     Text plasticDisplay;
     Text woodDisplay;
     Text moneyDisplay;
+    Text oilDisplay;
 
     int woodCount;
     int plasticCount;
     float moneyCount;
+    int oilCount;
 
 
     private void Start()
@@ -29,6 +31,7 @@ public class PlasticCount : MonoBehaviour
         woodCount = GameObject.FindGameObjectWithTag("wareHouse").GetComponent<wareHouse>().woodStored;
         plasticCount = GameObject.FindGameObjectWithTag("wareHouse").GetComponent<wareHouse>().plasticStored;
         moneyCount = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<PlayerInfo>().money;
+        oilCount = GameObject.FindGameObjectWithTag("Refinery").GetComponent<Refinery>().oilStored;
     }
 
     void GetTextElements()
@@ -63,6 +66,16 @@ public class PlasticCount : MonoBehaviour
 
             }
         }
+        GameObject tempObject4 = GameObject.Find("Oil count");
+        if (tempObject4 != null)
+        {
+            oilDisplay = tempObject4.GetComponent<Text>();
+            if (oilDisplay == null)
+            {
+                Debug.Log("Could not locate Canvas component on " + tempObject4.name);
+
+            }
+        }
     }
 
     void UpdateHUD()
@@ -73,11 +86,15 @@ public class PlasticCount : MonoBehaviour
         }
         if (woodDisplay != null)
         {
-            woodDisplay.text = ((int)woodCount).ToString();
+            woodDisplay.text = woodCount.ToString();
         }
         if (moneyDisplay != null)
         {
             moneyDisplay.text = ((int)moneyCount).ToString();
+        }
+        if (oilDisplay != null)
+        {
+            oilDisplay.text = oilCount.ToString();
         }
     }
 }
