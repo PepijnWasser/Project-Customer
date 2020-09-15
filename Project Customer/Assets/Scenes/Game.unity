@@ -3338,6 +3338,7 @@ GameObject:
   - component: {fileID: 753296707}
   - component: {fileID: 753296710}
   - component: {fileID: 753296709}
+  - component: {fileID: 753296708}
   m_Layer: 0
   m_Name: tilted
   m_TagString: MainCamera
@@ -3359,6 +3360,21 @@ Transform:
   m_Father: {fileID: 263373357}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 60, y: 90, z: 0}
+--- !u!114 &753296708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753296706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e268071b184333241a4294a2d8f43cfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoomSpeed: 5
+  minZoom: 60
+  maxZoom: 10
 --- !u!81 &753296709
 AudioListener:
   m_ObjectHideFlags: 0
