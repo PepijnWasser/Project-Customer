@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Selected : MonoBehaviour
 {
-    [HideInInspector]
+    //[HideInInspector]
     public bool selected = false;
     public Material selectedMaterial;
     public Material notSelectedMaterial;
