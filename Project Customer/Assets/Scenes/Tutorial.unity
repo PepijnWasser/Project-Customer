@@ -508,9 +508,15 @@ RectTransform:
   m_Father: {fileID: 75871269}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 102.77, y: -56.5}
+=======
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -167.4, y: 144.1}
+>>>>>>> luc
   m_SizeDelta: {x: 205.54, y: 113}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &91256079
@@ -551,7 +557,11 @@ MonoBehaviour:
   - I'm not kidding. Once in a while a protest group will come to you asking you
     to donate some money to fund their protest. This will usually lead to a change
     in behaviour of the people in this town.
+<<<<<<< HEAD
   - Then you have the resources in the warehouses. You can sell them right away,
+=======
+  - Than you have the resources in the warehouses. You can sell them right away,
+>>>>>>> luc
     or wait until they are worth more than a toothpick.
   - Your compass tells you what direction you are facing. And remember, the town
     is always in the North.
@@ -6910,6 +6920,7 @@ Terrain:
   m_GroupingID: 0
   m_RenderingLayerMask: 1
   m_AllowAutoConnect: 1
+<<<<<<< HEAD
 --- !u!1 &1958704228
 GameObject:
   m_ObjectHideFlags: 0
@@ -7052,6 +7063,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> luc
 --- !u!1 &2009372147
 GameObject:
   m_ObjectHideFlags: 0
