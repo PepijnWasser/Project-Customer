@@ -7,6 +7,7 @@ public class PlasticCount : MonoBehaviour
     Text plasticDisplay;
     Text woodDisplay;
     Text moneyDisplay;
+
     Text oilDisplay;
 
     int woodCount;
@@ -66,6 +67,7 @@ public class PlasticCount : MonoBehaviour
 
             }
         }
+
         GameObject tempObject4 = GameObject.Find("Oil count");
         if (tempObject4 != null)
         {
@@ -86,12 +88,14 @@ public class PlasticCount : MonoBehaviour
         }
         if (woodDisplay != null)
         {
+
             woodDisplay.text = woodCount.ToString();
         }
         if (moneyDisplay != null)
         {
             moneyDisplay.text = ((int)moneyCount).ToString();
         }
+
         if (oilDisplay != null)
         {
             oilDisplay.text = oilCount.ToString();

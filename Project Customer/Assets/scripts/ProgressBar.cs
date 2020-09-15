@@ -8,14 +8,9 @@ public class ProgressBar : MonoBehaviour
 {
     public int minimum;
     public int maximum;
-    public int current;
+    int current;
 
     public Image mask;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -24,6 +19,7 @@ public class ProgressBar : MonoBehaviour
     }
     void GetCurrentFill()
     {
+        current = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<PlayerInfo>().fuel;
         float currentOffset = current - minimum; // current - minimum
         float maximumOffset = maximum - minimum;
         float fillAmount = currentOffset / maximumOffset;

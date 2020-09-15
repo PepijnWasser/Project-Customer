@@ -8,17 +8,23 @@ public class SetCompassRotation : MonoBehaviour
     public Transform topDownCameraTransform;
     Vector3 dir;
 
+    ChangeCamera cam;
+
     void Update()
     {
-        if (GameObject.FindGameObjectWithTag("Camera Pivot").GetComponent<ChangeCamera>().camMode == ChangeCamera.CamMode.tilted)
+        cam = GameObject.FindGameObjectWithTag("Camera Pivot").GetComponent<ChangeCamera>();
+        if (cam != null)
         {
-            dir.z = tiltedCameraTransform.eulerAngles.y + 90;
-            transform.localEulerAngles = dir;
-        }
-        else
-        {
-            dir.z = topDownCameraTransform.eulerAngles.y + 90;
-            transform.localEulerAngles = dir;
-        }
+            if (cam.camMode == ChangeCamera.CamMode.tilted)
+            {
+                dir.z = tiltedCameraTransform.eulerAngles.y + 270;
+                transform.localEulerAngles = dir;
+            }
+            else
+            {
+                dir.z = topDownCameraTransform.eulerAngles.y + 270;
+                transform.localEulerAngles = dir;
+            }
+        }    
     }
 }

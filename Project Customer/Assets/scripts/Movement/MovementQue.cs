@@ -26,7 +26,8 @@ public class MovementQue : MonoBehaviour
 
     void CheckForQueChange()
     {
-        if (selected == true)
+
+        if (selected == true && GameObject.FindGameObjectWithTag("Camera Pivot").GetComponent<ChangeCamera>().camMode == ChangeCamera.CamMode.tilted)
         {
             if (Input.GetMouseButtonDown(1))
             {
