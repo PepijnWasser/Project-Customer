@@ -7659,6 +7659,7 @@ MonoBehaviour:
   RemoveMoneyClip: {fileID: 8300000, guid: f38a23e8cbfcba94bb17a0947a53163d, type: 3}
   addOilClip: {fileID: 8300000, guid: 64f5ff552de2d3d45a12f871f4b0575b, type: 3}
   addWoodClip: {fileID: 8300000, guid: 07fde1f1afd6e074787dce6fc735fa1f, type: 3}
+  addPlasticAudio: {fileID: 8300000, guid: 2dead13c21c4063419a533d4dd8417c1, type: 3}
 --- !u!4 &754547226
 Transform:
   m_ObjectHideFlags: 0
