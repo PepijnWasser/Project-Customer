@@ -7657,8 +7657,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d24b64516fae98a47bc9d74e567a76c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 754547224}
-  audioClip: {fileID: 8300000, guid: 9a6ebcc6f6f204c46af06a167fb53254, type: 3}
+  AddMoneyClip: {fileID: 8300000, guid: 9a6ebcc6f6f204c46af06a167fb53254, type: 3}
+  RemoveMoneyClip: {fileID: 8300000, guid: f38a23e8cbfcba94bb17a0947a53163d, type: 3}
+  addOilClip: {fileID: 8300000, guid: 64f5ff552de2d3d45a12f871f4b0575b, type: 3}
+  addWoodClip: {fileID: 8300000, guid: 07fde1f1afd6e074787dce6fc735fa1f, type: 3}
 --- !u!4 &754547226
 Transform:
   m_ObjectHideFlags: 0
