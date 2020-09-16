@@ -12,7 +12,7 @@ public class EventManager : MonoBehaviour
     public int minCost;
     public int maxCost;
 
-    int cost = 0;
+    int cost;
     string displayMessage;
 
     public string[] messages;
@@ -60,7 +60,7 @@ public class EventManager : MonoBehaviour
             {
                 eventDisplay.enabled = true;
                 string randomMessage = messages[Random.Range(0, messages.Count())];
-                displayMessage = randomMessage + "\n\n" + "It will cost: " + cost.ToString();
+                displayMessage = randomMessage + "\n\n" + "It will cost: " + cost.ToString() + "dollars.";
                 eventMessage.text = displayMessage;
             }
         }

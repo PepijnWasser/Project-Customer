@@ -16,7 +16,7 @@ public class NumberOfGarbagePieces : MonoBehaviour
 
     private void Update()
     {
-        string message = "don't let the amount of garbage get over 200! \n\n amount of garbage:";
+        string message = "don't let the amount of garbage get over 200! \n\n amount of garbage: ";
         garbageDisplay.text = message + GetNumberOfGarbagePieces().ToString();
     }
 

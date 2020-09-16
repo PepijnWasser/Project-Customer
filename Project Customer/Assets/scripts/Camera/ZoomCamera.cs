@@ -5,7 +5,9 @@ using UnityEngine;
 public class ZoomCamera : MonoBehaviour
 {
     public float zoomSpeed;
+    [Min(10)]
     public float minZoom;
+    [Min(10)]
     public float maxZoom;
 
     private void Update()
@@ -15,22 +17,31 @@ public class ZoomCamera : MonoBehaviour
 
     void Zoom()
     {
-        float oldFOV;
-        float FOVChanged;
-        oldFOV = GetComponent<Camera>().fieldOfView;
-        if (Input.mouseScrollDelta.y > 0)
+        if(GetComponent<Camera>() != null)
         {
-            FOVChanged = oldFOV - zoomSpeed;
-        }
-        else if (Input.mouseScrollDelta.y < 0)
-        {
-            FOVChanged = oldFOV + zoomSpeed;
+            float oldFOV;
+            float FOVChanged;
+            oldFOV = GetComponent<Camera>().fieldOfView;
+
+            if (Input.mouseScrollDelta.y > 0)
+            {
+                FOVChanged = oldFOV - zoomSpeed;
+            }
+            else if (Input.mouseScrollDelta.y < 0)
+            {
+                FOVChanged = oldFOV + zoomSpeed;
+            }
+            else
+            {
+                FOVChanged = oldFOV;
+            }
+            GetComponent<Camera>().fieldOfView = ClampFOV(FOVChanged);
         }
         else
         {
-            FOVChanged = oldFOV;
+            Debug.Log("There is no camera component attached on the object ZoomCamera is on");
         }
-        GetComponent<Camera>().fieldOfView = ClampFOV(FOVChanged);
+      
     }
 
     float ClampFOV(float FOV)

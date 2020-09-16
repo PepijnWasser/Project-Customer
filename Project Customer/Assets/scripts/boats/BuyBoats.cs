@@ -20,7 +20,6 @@ public class BuyBoats : MonoBehaviour
     void Start()
     {
         playerInfo = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<PlayerInfo>();
-
         GameObject tempObject = GameObject.Find("buyMenu");
         if (tempObject != null)
         {
@@ -33,6 +32,7 @@ public class BuyBoats : MonoBehaviour
     }
     void Update()
     {
+
         if (GetComponent<Selected>().selected)
         {
             buyMenu.enabled = true;
@@ -48,9 +48,7 @@ public class BuyBoats : MonoBehaviour
         if(playerInfo.money >= smallBoatPrice)
         {
             playerInfo.RemoveMoney(smallBoatPrice);
-            Debug.Log("mark1");
-            GameObject newBoat = Instantiate(smallBoat, transform.position + new Vector3(5, 0, 0), Quaternion.identity);
-            Debug.Log("mark2");        
+            GameObject newBoat = Instantiate(smallBoat, transform.position + new Vector3(5, 0, 0), Quaternion.identity); 
         }
     }
 
