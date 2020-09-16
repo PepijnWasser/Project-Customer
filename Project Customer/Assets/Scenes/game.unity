@@ -9004,9 +9004,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d24b64516fae98a47bc9d74e567a76c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 754547224}
-  AddMoneyClip: {fileID: 0}
-  RemoveMoneyClip: {fileID: 0}
+  AddMoneyClip: {fileID: 8300000, guid: 9a6ebcc6f6f204c46af06a167fb53254, type: 3}
+  RemoveMoneyClip: {fileID: 8300000, guid: f38a23e8cbfcba94bb17a0947a53163d, type: 3}
+  addOilClip: {fileID: 8300000, guid: 64f5ff552de2d3d45a12f871f4b0575b, type: 3}
+  addWoodClip: {fileID: 8300000, guid: 07fde1f1afd6e074787dce6fc735fa1f, type: 3}
+  addPlasticAudio: {fileID: 8300000, guid: 2dead13c21c4063419a533d4dd8417c1, type: 3}
 --- !u!4 &754547226
 Transform:
   m_ObjectHideFlags: 0
@@ -9071,7 +9073,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_UiScaleMode: 1
-  m_ReferencePixelsPerUnit: 100
+  m_ReferencePixelsPerUnit: 300
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
@@ -10910,14 +10912,15 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3, y: 1, z: 2}
-  m_Children: []
+  m_Children:
+  - {fileID: 1581693872}
   m_Father: {fileID: 756563358}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -16, y: -31}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 100, y: 150}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &903998485
 MonoBehaviour:
@@ -11644,7 +11647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 957781c4550cf2d459040fffd549c403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  money: 200
+  money: 2
   fuel: 50
 --- !u!114 &976529864
 MonoBehaviour:
@@ -11675,8 +11678,14 @@ MonoBehaviour:
   minCost: 2
   maxCost: 20
   messages:
-  - remove plastic by raising awareness
-  - remove oil by making factories more clean
+  - Prevent plastic from getting into the oceans by funding an advertising campaign?
+  - Put pressure on a oil refinery by pointing out how bad they are for the enviroment?
+  - Bring awareness to the enviormental damages painted wood can have?
+  - Hire a lobbyist to change local regulations making oil tankers use cleaner fuel?
+  - Prevent plastic from getting into the ocean through the sewers by installing
+    a filter?
+  - A local climate group asks you for funding for a to paint the wood of the local
+    harbor in a eco friendly paint. Do you donate?
 --- !u!114 &976529866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15897,6 +15906,99 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1580036649}
+  m_CullTransparentMesh: 0
+--- !u!1 &1581693871
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1581693872}
+  - component: {fileID: 1581693875}
+  - component: {fileID: 1581693874}
+  - component: {fileID: 1581693873}
+  m_Layer: 5
+  m_Name: Oil count (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1581693872
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1581693871}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.33333334, y: 1, z: 0.49999997}
+  m_Children: []
+  m_Father: {fileID: 903998484}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.5, y: 2}
+  m_SizeDelta: {x: 289.62, y: 128.1}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1581693873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1581693871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71b63842d8660be478743e8daa13cf5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1581693874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1581693871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.38039216, g: 0.20392157, b: 0.047058824, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 3310cf999f5a3c24ba9c50745ac34eb6, type: 3}
+    m_FontSize: 1
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 40
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'help me
+
+'
+--- !u!222 &1581693875
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1581693871}
   m_CullTransparentMesh: 0
 --- !u!1001 &1590795473
 PrefabInstance:
