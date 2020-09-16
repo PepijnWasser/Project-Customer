@@ -1899,12 +1899,12 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 98212c14c44438344bef7c28a31b5be0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -113.7
+      value: -116.24
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 98212c14c44438344bef7c28a31b5be0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.6
+      value: 4.41
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 98212c14c44438344bef7c28a31b5be0,
         type: 3}
@@ -2529,6 +2529,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 64142ba15b266e147bd60078f238600d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e99abbf137dafcc4bafa7a38e0d2740b, type: 3}
+
 --- !u!1 &216604322
 GameObject:
   m_ObjectHideFlags: 0
@@ -2663,6 +2664,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+
 --- !u!1 &218333019
 GameObject:
   m_ObjectHideFlags: 0
@@ -13528,6 +13530,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1494191038}
   m_CullTransparentMesh: 0
+
 --- !u!1 &1542923741
 GameObject:
   m_ObjectHideFlags: 0
@@ -13684,6 +13687,7 @@ MonoBehaviour:
   maxSellPriceOil: 20
   roughChangeTime: 60
   sellPriceOil: 0
+
 --- !u!1 &1580036649
 GameObject:
   m_ObjectHideFlags: 0
