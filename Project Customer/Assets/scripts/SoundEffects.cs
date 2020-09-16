@@ -8,12 +8,10 @@ public class SoundEffects : MonoBehaviour
     float moneyAmount;
 
     public AudioSource audioSource;
-<<<<<<< HEAD
+
     public AudioClip AddMoneyClip;
     public AudioClip RemoveMoneyClip;
-=======
-    public AudioClip audioClip;
->>>>>>> luc
+
 
     private void Update()
     {
@@ -22,15 +20,13 @@ public class SoundEffects : MonoBehaviour
 
         if(moneyAmount > oldMoneyAmount)
         {
-<<<<<<< HEAD
+
             audioSource.PlayOneShot(AddMoneyClip);
         }
         if (moneyAmount < oldMoneyAmount)
         {
             audioSource.PlayOneShot(RemoveMoneyClip);
-=======
-            audioSource.PlayOneShot(audioClip);
->>>>>>> luc
+
         }
     }
 }
