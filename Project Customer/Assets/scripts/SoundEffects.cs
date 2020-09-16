@@ -8,7 +8,8 @@ public class SoundEffects : MonoBehaviour
     float moneyAmount;
 
     public AudioSource audioSource;
-    public AudioClip audioClip;
+    public AudioClip AddMoneyClip;
+    public AudioClip RemoveMoneyClip;
 
     private void Update()
     {
@@ -17,7 +18,11 @@ public class SoundEffects : MonoBehaviour
 
         if(moneyAmount > oldMoneyAmount)
         {
-            audioSource.PlayOneShot(audioClip);
+            audioSource.PlayOneShot(AddMoneyClip);
+        }
+        if (moneyAmount < oldMoneyAmount)
+        {
+            audioSource.PlayOneShot(RemoveMoneyClip);
         }
     }
 }
