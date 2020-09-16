@@ -12,7 +12,10 @@ public class GameOverManager : MonoBehaviour
 
     private void Start()
     {
-        playerInfo = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<PlayerInfo>();    
+        if(GameObject.FindGameObjectWithTag("LevelManager").GetComponent<PlayerInfo>() != null)
+        {
+            playerInfo = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<PlayerInfo>();
+        } 
     }
 
     private void Update()

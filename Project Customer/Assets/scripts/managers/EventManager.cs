@@ -20,12 +20,26 @@ public class EventManager : MonoBehaviour
     Canvas eventDisplay;
     Text eventMessage;
     PlayerInfo playerInfo;
-    GarbageManager spawnGarbage;
+    GarbageManager garbageManager;
 
     private void Start()
     {
-        playerInfo = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<PlayerInfo>();
-        spawnGarbage = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<GarbageManager>();
+        if(GameObject.FindGameObjectWithTag("LevelManager").GetComponent<PlayerInfo>()  != null)
+        {
+            playerInfo = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<PlayerInfo>();
+        }
+        else
+        {
+            Debug.Log("no playerInfo component found");
+        }
+        if(GameObject.FindGameObjectWithTag("LevelManager").GetComponent<GarbageManager>() != null)
+        {
+            garbageManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<GarbageManager>();
+        }
+        else
+        {
+            Debug.Log("no garbagemanager component found");
+        }     
 
         GameObject tempObject = GameObject.Find("EventDisplay");
         if (tempObject != null)
@@ -63,64 +77,82 @@ public class EventManager : MonoBehaviour
                 displayMessage = randomMessage + "\n\n" + "It will cost: " + cost.ToString() + "dollars.";
                 eventMessage.text = displayMessage;
             }
+            else
+            {
+                Debug.Log("cannot display eventMessage");
+            }
         }
     }
 
     public void CloseEvent()
     {
-        eventDisplay.enabled = false;
+        if(eventDisplay != null)
+        {
+            eventDisplay.enabled = false;
+        }
+        else
+        {
+            Debug.Log("no eventDisplayFound");
+        }
     }
 
     public void Paid()
     {
-        if(playerInfo.money >= cost)
+        if(playerInfo != null && garbageManager != null)
         {
-            playerInfo.RemoveMoney(cost);
-            CloseEvent();
-            
-            bool oilInSentence = false;
-            bool woodInSentence = false;
-            bool plasticInSentence = false;
+            if (playerInfo.money >= cost)
+            {
+                playerInfo.RemoveMoney(cost);
+                CloseEvent();
 
-            string[] words = displayMessage.Split(' ');
+                bool oilInSentence = false;
+                bool woodInSentence = false;
+                bool plasticInSentence = false;
 
-            foreach (string str in words)
-            {
-                if (str.Contains("plastic"))
-                {
-                    plasticInSentence = true;
-                }
-                if (str.Contains("oil"))
-                {
-                    oilInSentence = true;
-                }
-                if (str.Contains("wood"))
-                {
-                    woodInSentence = true;
-                }
-            }
+                string[] words = displayMessage.Split(' ');
 
-            if (woodInSentence)
-            {
-                if(spawnGarbage != null)
+                foreach (string str in words)
                 {
-                    spawnGarbage.DecreaseWoodSpawnTime();
+                    if (str.Contains("plastic"))
+                    {
+                        plasticInSentence = true;
+                    }
+                    if (str.Contains("oil"))
+                    {
+                        oilInSentence = true;
+                    }
+                    if (str.Contains("wood"))
+                    {
+                        woodInSentence = true;
+                    }
                 }
-            }
-            if (plasticInSentence)
-            {
-                if (spawnGarbage != null)
+
+                if (woodInSentence)
                 {
-                    spawnGarbage.DecreasePlasticSpawnTime();
+                    if (garbageManager != null)
+                    {
+                        garbageManager.DecreaseWoodSpawnTime();
+                    }
                 }
-            }
-            if (oilInSentence)
-            {
-                if (spawnGarbage != null)
+                if (plasticInSentence)
                 {
-                    spawnGarbage.DecreaseOilSpawnTime();
+                    if (garbageManager != null)
+                    {
+                        garbageManager.DecreasePlasticSpawnTime();
+                    }
+                }
+                if (oilInSentence)
+                {
+                    if (garbageManager != null)
+                    {
+                        garbageManager.DecreaseOilSpawnTime();
+                    }
                 }
             }
         }
+        else
+        {
+            Debug.Log("no playerInfo or garbageManaager in eventmanager");
+        }       
     }
 }

@@ -14,10 +14,38 @@ public class SellResourcesRefinery : MonoBehaviour
 
     void Start()
     {
-        worldData = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<WorldData>();
-        playerInfo = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<PlayerInfo>();
-        sellPriceRefinery = GetComponent<SellPriceRefinery>();
-        refinery = GetComponent<Refinery>();
+        if(GameObject.FindGameObjectWithTag("LevelManager").GetComponent<WorldData>() != null)
+        {
+            worldData = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<WorldData>();
+        }
+        else
+        {
+            Debug.Log("could not locate worldData in sellresourcerefinery");
+        }
+        if(GameObject.FindGameObjectWithTag("LevelManager").GetComponent<PlayerInfo>() != null)
+        {
+            playerInfo = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<PlayerInfo>();
+        }
+        else
+        {
+            Debug.Log("could not locate playerInfo in sellresourcerefinery");
+        }
+        if(GetComponent<SellPriceRefinery>() != null)
+        {
+            sellPriceRefinery = GetComponent<SellPriceRefinery>();
+        }
+        else
+        {
+            Debug.Log("could not locate sellpricerefinery in sellresourcerefinery");
+        }
+        if(GetComponent<Refinery>() != null)
+        {
+            refinery = GetComponent<Refinery>();
+        }
+        else
+        {
+            Debug.Log("could not locate refinery in sellresourcerefinery");
+        }
 
         GameObject tempObject = GameObject.Find("tradeMenuRefinery");
         if (tempObject != null)
@@ -43,19 +71,33 @@ public class SellResourcesRefinery : MonoBehaviour
 
     public void SellOil()
     {
-        if (refinery.oilStored >= worldData.oilVolume)
+        if(refinery != null && worldData != null)
         {
-            playerInfo.AddMoney(sellPriceRefinery.sellPriceOil);
-            refinery.RemoveOil();
+            if (refinery.oilStored >= worldData.oilVolume)
+            {
+                playerInfo.AddMoney(sellPriceRefinery.sellPriceOil);
+                refinery.RemoveOil();
+            }
+        }
+        else
+        {
+            Debug.Log("failed to selloil in sellresourcerefinery");
         }
     }
 
     public void TradeOilToFuel()
     {
-        if (refinery.oilStored >= worldData.oilVolume && playerInfo.fuel + worldData.oilVolume < worldData.maxFuel)
+        if (refinery != null && worldData != null && playerInfo != null)
         {
-            refinery.RemoveOil();
-            playerInfo.AddFuel(worldData.oilVolume * convertionRatio);
+            if (refinery.oilStored >= worldData.oilVolume && playerInfo.fuel + worldData.oilVolume < worldData.maxFuel)
+            {
+                refinery.RemoveOil();
+                playerInfo.AddFuel(worldData.oilVolume * convertionRatio);
+            }
+        }
+        else
+        {
+            Debug.Log("failed to tradeoiltofuel in sellresourcerefinery");
         }
     }
 }

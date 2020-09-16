@@ -17,34 +17,51 @@ public class ChangeCamera : MonoBehaviour
 
     private void Start()
     {
-        tilted = GameObject.Find("tilted").GetComponent<Camera>();
-        topDown = GameObject.Find("top down").GetComponent<Camera>();
+        if(GameObject.Find("tilted").GetComponent<Camera>()  != null)
+        {
+            tilted = GameObject.Find("tilted").GetComponent<Camera>();
+        }
+        else
+        {
+            Debug.Log("no tilted camera found");
+        }
+        if(GameObject.Find("top down").GetComponent<Camera>() != null)
+        {
+            topDown = GameObject.Find("top down").GetComponent<Camera>();
+        }
+        else
+        {
+            Debug.Log("no topDown camera found");
+        }
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C))
+        if(tilted != null && topDown != null)
         {
-            if(camMode == CamMode.tilted)
+            if (Input.GetKeyDown(KeyCode.C))
             {
-                camMode = CamMode.topDown;
+                if (camMode == CamMode.tilted)
+                {
+                    camMode = CamMode.topDown;
+                }
+                else
+                {
+                    camMode = CamMode.tilted;
+                }
             }
-            else
+
+            if (camMode == CamMode.tilted)
             {
-                camMode = CamMode.tilted;
+                tilted.enabled = true;
+                topDown.enabled = false;
             }
-        }
+            if (camMode == CamMode.topDown)
+            {
+                tilted.enabled = false;
+                topDown.enabled = true;
 
-        if(camMode == CamMode.tilted)
-        {
-            tilted.enabled = true;
-            topDown.enabled = false;
-        }
-        if(camMode == CamMode.topDown)
-        {
-            tilted.enabled = false;
-            topDown.enabled = true;
-
-        }
+            }
+        }     
     }
 }

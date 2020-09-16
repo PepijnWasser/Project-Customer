@@ -37,17 +37,42 @@ public class garbagePickup : MonoBehaviour
         {
             if (Vector3.Distance(transform.position, piece.transform.position) < pickupRange)
             {
-                int plasticStored = GetComponent<Inventory>().plasticStored;
-                int plasticVolume = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<WorldData>().plasticVolume;
-                int maxPlastic = GetComponent<Inventory>().maxPlastic;
-                int woodStored = GetComponent<Inventory>().woodStored;
-                int woodVolume = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<WorldData>().woodVolume;
-                int maxWood = GetComponent<Inventory>().maxWood;
-                int oilStored = GetComponent<Inventory>().oilStored;
-                int oilVolume = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<WorldData>().oilVolume;
-                int maxOil = GetComponent<Inventory>().maxOil;
-                int inventorySpace = GetComponent<Inventory>().inventorySpace;
+                int plasticStored = 0;
+                int maxPlastic = 0;
+                int woodStored = 0;
+                int maxWood = 0;
+                int oilStored = 0;
+                int maxOil = 0;
+                int inventorySpace = 0;
+                if (GetComponent<Inventory>() != null)
+                {
+                    plasticStored = GetComponent<Inventory>().plasticStored;
+                    maxPlastic = GetComponent<Inventory>().maxPlastic;
+                    woodStored = GetComponent<Inventory>().woodStored;
+                    maxWood = GetComponent<Inventory>().maxWood;
+                    oilStored = GetComponent<Inventory>().oilStored;
+                    maxOil = GetComponent<Inventory>().maxOil;
+                    inventorySpace = GetComponent<Inventory>().inventorySpace;
+                }
+                else
+                {
+                    Debug.Log("could not locate inventory component in garbagepickup");
+                }
 
+                int plasticVolume = 0;
+                int woodVolume = 0;
+                int oilVolume = 0;
+                if (GameObject.FindGameObjectWithTag("LevelManager").GetComponent<WorldData>() != null)
+                {
+                    plasticVolume = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<WorldData>().plasticVolume;
+                    woodVolume = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<WorldData>().woodVolume;
+                    oilVolume = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<WorldData>().oilVolume;
+                }
+                else
+                {
+                    Debug.Log("could not locate worldData component in garbagepickup");
+                }
+               
                 if (piece.tag == "wood")
                 {
                     if (woodStored + woodVolume <= maxWood && woodStored + oilStored + plasticStored + woodVolume < inventorySpace)

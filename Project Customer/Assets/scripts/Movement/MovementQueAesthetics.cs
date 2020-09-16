@@ -10,7 +10,15 @@ public class MovementQueAesthetics : MonoBehaviour
 
     void Update()
     {
-        que = GetComponent<MovementQue>().que;
+        if (GetComponent<MovementQue>() != null)
+        {
+            que = GetComponent<MovementQue>().que;
+        }
+        else
+        {
+            Debug.Log("cannot locate movementque component in movementqueaesthetics");
+        }
+
         SpawnNodes();
         DestroyNodes();
     }
@@ -57,10 +65,5 @@ public class MovementQueAesthetics : MonoBehaviour
             queNodes.Remove(Node);
             Destroy(Node.gameObject);         
         }
-    }
-
-    public void DestroyNode()
-    {
-
     }
 }

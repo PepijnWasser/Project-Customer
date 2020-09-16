@@ -14,15 +14,18 @@ public class wareHouse : MonoBehaviour
     public int wareHouseMaxPlastic;
     public int wareHouseMaxWood;
 
-    //[HideInInspector]
+    [HideInInspector]
     public int plasticStored;
-    //[HideInInspector]
+    [HideInInspector]
     public int woodStored;
 
     void Start()
     {
-        plasticVolume = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<WorldData>().plasticVolume;
-        woodVolume = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<WorldData>().woodVolume;
+        if(GameObject.FindGameObjectWithTag("LevelManager").GetComponent<WorldData>() != null)
+        {
+            plasticVolume = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<WorldData>().plasticVolume;
+            woodVolume = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<WorldData>().woodVolume;
+        }
     }
 
     void Update()

@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class SelectionManager : MonoBehaviour
 {
+    [HideInInspector]
     public List<GameObject> selectedObjects = new List<GameObject>();
     Image canvasImage;
     ChangeCamera cam;
@@ -23,7 +24,15 @@ public class SelectionManager : MonoBehaviour
 
     void Update()
     {
-        cam = GameObject.FindGameObjectWithTag("Camera Pivot").GetComponent<ChangeCamera>();
+        if(GameObject.FindGameObjectWithTag("Camera Pivot").GetComponent<ChangeCamera>() != null)
+        {
+            cam = GameObject.FindGameObjectWithTag("Camera Pivot").GetComponent<ChangeCamera>();
+        }
+        else
+        {
+            Debug.Log("cannot locate cam in selectionManager");
+        }
+      
 
         if(cam != null)
         {
@@ -39,7 +48,10 @@ public class SelectionManager : MonoBehaviour
                         if (hit)
                         {
                             GameObject objectHit = hitInfo.transform.gameObject;
-                            Debug.Log(objectHit.tag);
+
+                            ///
+                            //objects
+                            ///
                             if (objectHit.tag == "Boat" || objectHit.tag == "harbor" || objectHit.tag == "wareHouse" || objectHit.tag == "Refinery")
                             {
                                 DeselectAll();
@@ -53,29 +65,23 @@ public class SelectionManager : MonoBehaviour
                             {
                                 if (CheckIfTagSelected("Boat"))
                                 {
-                                    Debug.Log("there is a boat selected");
                                     if (CheckIfBoatIsNodeParent(GetObjectsWithTag("Boat"), objectHit))
                                     {
-                                        Debug.Log("the boat corresponds to the node");
                                         if (CheckIfTagSelected("Node"))
                                         {
-                                            Debug.Log("there is another node selected");
                                             DeselectSpecific("Node");
                                             Select(objectHit);
                                             selectedObjects.Add(objectHit);
                                         }
                                         else
                                         {
-                                            Debug.Log("there is no other node selected");
                                             Select(objectHit);
                                             selectedObjects.Add(objectHit);
                                         }
                                     }
                                     else
                                     {
-                                        Debug.Log("the boat is not corresponding with the node");
                                         DeselectAll();
-
                                         Select(objectHit);
                                         selectedObjects.Add(objectHit);
                                     }
@@ -97,7 +103,7 @@ public class SelectionManager : MonoBehaviour
                         }
                         else
                         {
-                            Debug.Log("No hit");
+                            Debug.Log("No hit on the map in selectionManager");
                         }
                     }
 
@@ -108,9 +114,17 @@ public class SelectionManager : MonoBehaviour
 
     bool TestForMenus()
     {
-        if (TestBuyMenu() || TestSellMenuWareHouse() || TestTradeMenuRefinery())
+        if (testMenus())
         {
-            return true;
+            //within the box
+            if(Input.mousePosition.x < canvasImage.GetComponent<RectTransform>().position.x + canvasImage.GetComponent<RectTransform>().rect.width / 2 &&          Input.mousePosition.y < canvasImage.GetComponent<RectTransform>().position.y + canvasImage.GetComponent<RectTransform>().rect.height / 2)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         else
         {
@@ -118,9 +132,9 @@ public class SelectionManager : MonoBehaviour
         }
     }
 
-    bool TestBuyMenu()
+    bool testMenus()
     {
-        if (CheckIfTagSelected("harbor") && Input.mousePosition.x < canvasImage.rectTransform.rect.width && Input.mousePosition.y > Screen.height - canvasImage.rectTransform.rect.height)
+        if (CheckIfTagSelected("harbor") || CheckIfTagSelected("Refinery") || CheckIfTagSelected("wareHouse"))
         {
             return true;
         }
@@ -129,30 +143,6 @@ public class SelectionManager : MonoBehaviour
             return false;
         }
 
-    }
-
-    bool TestSellMenuWareHouse()
-    {
-        if (CheckIfTagSelected("wareHouse") && Input.mousePosition.x < canvasImage.rectTransform.rect.width && Input.mousePosition.y > Screen.height - canvasImage.rectTransform.rect.height)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-    
-    bool TestTradeMenuRefinery()
-    {
-        if (CheckIfTagSelected("Refinery") && Input.mousePosition.x < canvasImage.rectTransform.rect.width && Input.mousePosition.y > Screen.height - canvasImage.rectTransform.rect.height)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
     }
 
     bool CheckIfTagSelected(string tag)

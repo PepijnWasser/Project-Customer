@@ -12,10 +12,38 @@ public class SellResourcesWareHouse : MonoBehaviour
 
     void Start()
     {
-        worldData = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<WorldData>();
-        playerInfo = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<PlayerInfo>();
-        sellPriceWareHouse = GetComponent<SellPriceWareHouse>();
-        wareHouse = GetComponent<wareHouse>();
+        if (GameObject.FindGameObjectWithTag("LevelManager").GetComponent<WorldData>() != null)
+        {
+            worldData = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<WorldData>();
+        }
+        else
+        {
+            Debug.Log("could not locate worldData in sellresourcerewarehouse");
+        }
+        if (GameObject.FindGameObjectWithTag("LevelManager").GetComponent<PlayerInfo>() != null)
+        {
+            playerInfo = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<PlayerInfo>();
+        }
+        else
+        {
+            Debug.Log("could not locate playerInfo in sellresourcerewarehouse");
+        }
+        if (GetComponent<SellPriceWareHouse>() != null)
+        {
+            sellPriceWareHouse = GetComponent<SellPriceWareHouse>();
+        }
+        else
+        {
+            Debug.Log("could not locate sellpricewarehouse in sellresourcewarehouse");
+        }
+        if (GetComponent<wareHouse>() != null)
+        {
+            wareHouse = GetComponent<wareHouse>();
+        }
+        else
+        {
+            Debug.Log("could not locate warehouse in sellresourcewarehouse");
+        }
 
         GameObject tempObject = GameObject.Find("sellMenuWareHouse");
         if (tempObject != null)
@@ -41,19 +69,25 @@ public class SellResourcesWareHouse : MonoBehaviour
 
     public void SellWood()
     {
-        if (wareHouse.woodStored >= worldData.woodVolume)
+        if (wareHouse != null && worldData != null)
         {
-            playerInfo.AddMoney(sellPriceWareHouse.sellPriceWood);
-            wareHouse.RemoveWood();
+            if (wareHouse.woodStored >= worldData.woodVolume)
+            {
+                playerInfo.AddMoney(sellPriceWareHouse.sellPriceWood);
+                wareHouse.RemoveWood();
+            }
         }
     }
 
     public void SellPlastic()
     {
-        if (wareHouse.plasticStored >= worldData.plasticVolume)
+        if (wareHouse != null && worldData != null)
         {
-            playerInfo.AddMoney(sellPriceWareHouse.sellPricePlastic);
-            wareHouse.RemovePlastic();
+            if (wareHouse.plasticStored >= worldData.plasticVolume)
+            {
+                playerInfo.AddMoney(sellPriceWareHouse.sellPricePlastic);
+                wareHouse.RemovePlastic();
+            }
         }
     }
 }

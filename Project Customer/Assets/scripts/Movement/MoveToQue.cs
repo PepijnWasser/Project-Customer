@@ -14,7 +14,14 @@ public class MoveToQue : MonoBehaviour
 
     void Start()
     {
-        myAgent = GetComponent<NavMeshAgent>();    
+        if(GetComponent<NavMeshAgent>() != null)
+        {
+            myAgent = GetComponent<NavMeshAgent>();
+        }
+        else
+        {
+            Debug.Log("no navmeshagent component found in movetoque");
+        }
     }
 
     void Update() 
@@ -35,7 +42,14 @@ public class MoveToQue : MonoBehaviour
     {
         if (que != null && que.Count != 0)
         {
-            myAgent.SetDestination(target);
+            if(myAgent != null)
+            {
+                myAgent.SetDestination(target);
+            }
+            else
+            {
+                Debug.Log("could not locate myagent in movetoque");
+            }
 
             if (Vector3.Distance(transform.position, target) < 1)
             {

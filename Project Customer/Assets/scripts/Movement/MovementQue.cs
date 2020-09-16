@@ -7,16 +7,28 @@ using UnityEngine.UIElements;
 public class MovementQue : MonoBehaviour
 {
     public bool smallWater;
-    bool selected;
-    private List<GameObject> selectedObjects = new List<GameObject>();
+
+    [HideInInspector]
     public List<Vector3> que = new List<Vector3>();
+
+    bool selected;
+
+    private List<GameObject> selectedObjects = new List<GameObject>();
     private List<Vector3> coordinatesToRemove = new List<Vector3>();
     private Dictionary<Vector3, int> positionsToAdd = new Dictionary<Vector3, int>();
 
 
     void Update()
     {
-        selectedObjects = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<SelectionManager>().selectedObjects;
+        if(GameObject.FindGameObjectWithTag("LevelManager").GetComponent<SelectionManager>()  != null)
+        {
+            selectedObjects = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<SelectionManager>().selectedObjects;
+        }
+        else
+        {
+            Debug.Log("could not locate selectionManager component in momvementque");
+        }
+     
         if (transform.GetComponent<Selected>() != null)
         {
             selected = transform.GetComponent<Selected>().selected;
@@ -26,46 +38,52 @@ public class MovementQue : MonoBehaviour
 
     void CheckForQueChange()
     {
-
-        if (selected == true && GameObject.FindGameObjectWithTag("Camera Pivot").GetComponent<ChangeCamera>().camMode == ChangeCamera.CamMode.tilted)
+        if (GameObject.FindGameObjectWithTag("Camera Pivot").GetComponent<ChangeCamera>()  != null)
         {
-            if (Input.GetMouseButtonDown(1))
+            if (selected == true && GameObject.FindGameObjectWithTag("Camera Pivot").GetComponent<ChangeCamera>().camMode == ChangeCamera.CamMode.tilted)
             {
-                RaycastHit hitInfo = new RaycastHit();
-                bool hit = Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo);
-                if (hit)
+                if (Input.GetMouseButtonDown(1))
                 {
-                    if (hitInfo.transform.gameObject.tag == "Water" || (smallWater && hitInfo.transform.gameObject.tag == "River"))
+                    RaycastHit hitInfo = new RaycastHit();
+                    bool hit = Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo);
+                    if (hit)
                     {
-                        GameObject myNode = null;
-                        foreach (GameObject mObject in selectedObjects)
+                        if (hitInfo.transform.gameObject.tag == "Water" || (smallWater && hitInfo.transform.gameObject.tag == "River"))
                         {
-                            if (mObject.tag == "Node")
+                            GameObject myNode = null;
+                            foreach (GameObject mObject in selectedObjects)
                             {
-                                if (mObject.GetComponent<DeleteNode>().objectCreatedFor == transform)
+                                if (mObject.tag == "Node")
                                 {
-                                    myNode = mObject;
+                                    if (mObject.GetComponent<DeleteNode>().objectCreatedFor == transform)
+                                    {
+                                        myNode = mObject;
+                                    }
                                 }
                             }
-                        }
-                        if (myNode != null)
-                        {
-                            AddPositionToAddList(hitInfo.point, que.IndexOf(myNode.transform.position) + 1);
-                        }
-                        else
-                        {
-                            if (que == null || que.Count == 0)
+                            if (myNode != null)
                             {
-                                AddPositionToAddList(hitInfo.point, 0);
+                                AddPositionToAddList(hitInfo.point, que.IndexOf(myNode.transform.position) + 1);
                             }
                             else
                             {
-                                AddPositionToAddList(hitInfo.point, que.Count);
+                                if (que == null || que.Count == 0)
+                                {
+                                    AddPositionToAddList(hitInfo.point, 0);
+                                }
+                                else
+                                {
+                                    AddPositionToAddList(hitInfo.point, que.Count);
+                                }
                             }
                         }
                     }
                 }
             }
+        }
+        else
+        {
+            Debug.Log("no changeCamera script found in movementque");
         }
     }
 

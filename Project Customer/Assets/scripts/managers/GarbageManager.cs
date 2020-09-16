@@ -24,7 +24,14 @@ public class GarbageManager : MonoBehaviour
 
     private void Start()
     {
-        worldSize = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<WorldData>().mapSize;
+        if (GameObject.FindGameObjectWithTag("LevelManager").GetComponent<WorldData>() != null)
+        {
+            worldSize = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<WorldData>().mapSize;
+        }
+        else
+        {
+            Debug.Log("no worldData component found in garbageManager");
+        }  
     }
 
     void Update()
@@ -71,29 +78,38 @@ public class GarbageManager : MonoBehaviour
 
     Vector3 GetLocation()
     {
-        Vector3 spawnposition;
-
-        int ranX = Random.Range(-worldSize / 2, worldSize / 2);
-        int ranZ = Random.Range(-worldSize / 2, worldSize / 2);
-
-        RaycastHit RayInfo = new RaycastHit();
-        
-        if(Physics.Raycast(new Vector3(ranX, 500, ranZ), Vector3.down, out RayInfo, 1000))
+        if(worldSize != null)
         {
-            if(RayInfo.transform.gameObject.tag == "Water")
+            Vector3 spawnposition;
+
+            int ranX = Random.Range(-worldSize / 2, worldSize / 2);
+            int ranZ = Random.Range(-worldSize / 2, worldSize / 2);
+
+            RaycastHit RayInfo = new RaycastHit();
+
+            if (Physics.Raycast(new Vector3(ranX, 500, ranZ), Vector3.down, out RayInfo, 1000))
             {
-                return (new Vector3(ranX, RayInfo.transform.gameObject.transform.position.y, ranZ));
+                if (RayInfo.transform.gameObject.tag == "Water")
+                {
+                    return (new Vector3(ranX, RayInfo.transform.gameObject.transform.position.y, ranZ));
+                }
+                else
+                {
+                    Vector3 newVec = GetLocation();
+                    return newVec;
+                }
             }
             else
             {
-                Vector3 newVec = GetLocation();
-                return newVec;
+                return new Vector3(0, 0, 0);
             }
         }
         else
         {
+            Debug.Log("there is no worldSize in garbageManager");
             return new Vector3(0, 0, 0);
         }
+      
     }
 
     public void DecreaseWoodSpawnTime()

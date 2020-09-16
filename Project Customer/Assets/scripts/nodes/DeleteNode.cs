@@ -9,7 +9,14 @@ public class DeleteNode : MonoBehaviour
     
     void Update()
     {
-        selected = GetComponent<Selected>().selected;
+        if(GetComponent<Selected>() != null)
+        {
+            selected = GetComponent<Selected>().selected;
+        }
+        else
+        {
+            Debug.Log("could not locate selected component in deletenode");
+        }
         
         if(selected == true)
         {
@@ -21,6 +28,4 @@ public class DeleteNode : MonoBehaviour
             }
         }        
     }
-
-    
 }

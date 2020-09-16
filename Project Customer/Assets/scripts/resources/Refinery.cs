@@ -11,7 +11,7 @@ public class Refinery : MonoBehaviour
 
     public int wareHouseMaxOil;
 
-    //[HideInInspector]
+    [HideInInspector]
     public int oilStored;
 
 

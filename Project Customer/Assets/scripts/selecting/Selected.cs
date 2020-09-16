@@ -13,19 +13,33 @@ public class Selected : MonoBehaviour
 
     void Start()
     {
-        meshRenderer = GetComponent<MeshRenderer>();
-        meshRenderer.material = notSelectedMaterial;
+        if(GetComponent<MeshRenderer>() != null)
+        {
+            meshRenderer = GetComponent<MeshRenderer>();
+        }
+        else
+        {
+            Debug.Log("meshrenderer could not be located in selected");
+        }
     }
 
     void Update()
     {
-        if(selected == true)
+        if (meshRenderer != null)
         {
-            meshRenderer.material = selectedMaterial;
+            if (selected == true)
+            {
+
+                meshRenderer.material = selectedMaterial;
+            }
+            else
+            {
+                meshRenderer.material = notSelectedMaterial;
+            }
         }
         else
         {
-            meshRenderer.material = notSelectedMaterial;
+            Debug.Log("no meshrenderer found in selected");
         }
     }
 }

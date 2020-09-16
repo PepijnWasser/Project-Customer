@@ -12,16 +12,31 @@ public class Fuel : MonoBehaviour
 
     void Start()
     {
-        playerInfo = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<PlayerInfo>();
+        if (GameObject.FindGameObjectWithTag("LevelManager").GetComponent<PlayerInfo>() != null)
+        {
+            playerInfo = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<PlayerInfo>();
+        }
+        else
+        {
+            Debug.Log("could not locate playerinfo component in fuel");
+        }
     }
 
     void Update()
     {
-        secondCounter += Time.deltaTime;
-        if (secondCounter > 5)
+        if(playerInfo != null)
         {
-            secondCounter = 0;
-            playerInfo.RemoveFuel(amountOfFuelUsed);
+            secondCounter += Time.deltaTime;
+            if (secondCounter > 5)
+            {
+                secondCounter = 0;
+                playerInfo.RemoveFuel(amountOfFuelUsed);
+            }
         }
+        else
+        {
+            Debug.Log("playerinfo could not be found in fuel");
+        }
+       
     }
 }

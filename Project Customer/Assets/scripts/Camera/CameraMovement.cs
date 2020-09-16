@@ -12,7 +12,14 @@ public class CameraMovement : MonoBehaviour
 
     private void Start()
     {
-        worldSize = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<WorldData>().mapSize;
+        if(GameObject.FindGameObjectWithTag("LevelManager").GetComponent<WorldData>()  != null)
+        {
+            worldSize = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<WorldData>().mapSize;
+        }
+        else
+        {
+            Debug.Log("no worldData component found");
+        }
     }
 
     private void Update()
