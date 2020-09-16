@@ -86,13 +86,14 @@ public class GarbageManager : MonoBehaviour
             }
             else
             {
-                GetLocation();
+                Vector3 newVec = GetLocation();
+                return newVec;
             }
         }
-
-        spawnposition = new Vector3(0, 0, 0);
-
-        return spawnposition;
+        else
+        {
+            return new Vector3(0, 0, 0);
+        }
     }
 
     public void DecreaseWoodSpawnTime()
