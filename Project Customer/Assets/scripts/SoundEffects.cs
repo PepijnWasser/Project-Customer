@@ -13,12 +13,16 @@ public class SoundEffects : MonoBehaviour
     float oldWoodAmount;
     float woodAmount;
 
+    float oldPlasticAmount;
+    float plasticAmount;
+
     AudioSource audioSource;
 
     public AudioClip AddMoneyClip;
     public AudioClip RemoveMoneyClip;
     public AudioClip addOilClip;
     public AudioClip addWoodClip;
+    public AudioClip addPlasticAudio;
 
     private void Start()
     {
@@ -33,10 +37,13 @@ public class SoundEffects : MonoBehaviour
         oilAmount = GameObject.FindGameObjectWithTag("Refinery").GetComponent<Refinery>().oilStored;
         oldWoodAmount = woodAmount;
         woodAmount = GameObject.FindGameObjectWithTag("wareHouse").GetComponent<wareHouse>().woodStored;
+        oldPlasticAmount = plasticAmount;
+        plasticAmount = GameObject.FindGameObjectWithTag("wareHouse").GetComponent<wareHouse>().plasticStored;
 
         MoneyEffects();
         OilEffects();
         WoodEffects();
+        PlasticEffects();
     }
 
     void MoneyEffects()
@@ -62,6 +69,14 @@ public class SoundEffects : MonoBehaviour
     void WoodEffects()
     {
         if (woodAmount > oldWoodAmount)
+        {
+            audioSource.PlayOneShot(addWoodClip);
+        }
+    }
+
+    void PlasticEffects()
+    {
+        if (plasticAmount > oldPlasticAmount)
         {
             audioSource.PlayOneShot(addWoodClip);
         }
