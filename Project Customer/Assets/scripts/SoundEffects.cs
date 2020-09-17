@@ -78,7 +78,7 @@ public class SoundEffects : MonoBehaviour
     {
         if (plasticAmount > oldPlasticAmount)
         {
-            audioSource.PlayOneShot(addWoodClip);
+            audioSource.PlayOneShot(addPlasticAudio);
         }
     }
 }

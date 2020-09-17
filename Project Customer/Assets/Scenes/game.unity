@@ -12882,7 +12882,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51d7c8cffade5584f82d583a688e5445, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wareHousePickupRange: 20
+  wareHousePickupRange: 15
   wareHouseInventorySpace: 5
   wareHouseMaxPlastic: 5
   wareHouseMaxWood: 5
