@@ -12886,8 +12886,8 @@ MonoBehaviour:
   wareHouseInventorySpace: 5
   wareHouseMaxPlastic: 5
   wareHouseMaxWood: 5
-  plasticStored: 5
-  woodStored: 5
+  plasticStored: 0
+  woodStored: 0
 --- !u!65 &1156527519
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20022,7 +20022,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -823, y: -471}
+  m_AnchoredPosition: {x: -650, y: -471}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2072649028
@@ -21218,6 +21218,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7795612929850095353, guid: 1cfc4bdb2978af74481fc94730710509,
+        type: 3}
+      propertyPath: oilStored
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7795612930844346177, guid: 1cfc4bdb2978af74481fc94730710509,
         type: 3}
       propertyPath: m_LocalPosition.x

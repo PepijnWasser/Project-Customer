@@ -14,9 +14,9 @@ public class wareHouse : MonoBehaviour
     public int wareHouseMaxPlastic;
     public int wareHouseMaxWood;
 
-    [HideInInspector]
+    //[HideInInspector]
     public int plasticStored;
-    [HideInInspector]
+    //[HideInInspector]
     public int woodStored;
 
     void Start()

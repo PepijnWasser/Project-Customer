@@ -8,10 +8,10 @@ public class CameraMovement : MonoBehaviour
     public float boostSpeed;
     public float rotationSpeed;
 
-    public int worldUpperBorder;
-    public int worldLowerBorder;
-    public int worldLeftBorder;
-    public int worldRightBorder;
+    public int worldUpperBorder = -120;
+    public int worldLowerBorder = 200;
+    public int worldLeftBorder = -200;
+    public int worldRightBorder = 200;
 
     private void Update()
     {

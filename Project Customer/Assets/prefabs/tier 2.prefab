@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e90f18fd7e2ab944b2fc5488b420a41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickupRange: 5
+  pickupRange: 20
 --- !u!114 &9134973527541111290
 MonoBehaviour:
   m_ObjectHideFlags: 0

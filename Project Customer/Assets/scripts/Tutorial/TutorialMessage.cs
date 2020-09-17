@@ -51,7 +51,7 @@ public class TutorialMessage : MonoBehaviour
 
         if((messageNumber == 17 || messageNumber == 18) && needToCheckPlayerMoney)
         {
-            if(GameObject.FindGameObjectWithTag("LevelManager").GetComponent<PlayerInfo>().money == 2)
+            if(GameObject.FindGameObjectWithTag("LevelManager").GetComponent<PlayerInfo>().money >= 2)
             {
                 needToCheckPlayerMoney = false;
                 messageNumber = 19;
