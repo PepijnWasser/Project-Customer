@@ -123,10 +123,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b86c744a7a69f064292d9ec6921ff30d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventorySpace: 10
-  maxPlastic: 5
-  maxOil: 5
-  maxWood: 5
+  inventorySpace: 30
+  maxPlastic: 30
+  maxOil: 30
+  maxWood: 30
   plasticStored: 0
   oilStored: 0
   woodStored: 0
@@ -236,4 +236,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ca5641374b1b3946b24e78108d945cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountOfFuelUsed: 3
+  amountOfFuelUsed: 4

@@ -189,7 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b17cadb097a8d740a26313da993b00a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smallWater: 0
+  smallWater: 1
   que: []
 --- !u!114 &5639370168847066903
 MonoBehaviour:
@@ -216,9 +216,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b86c744a7a69f064292d9ec6921ff30d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventorySpace: 10
-  maxPlastic: 5
-  maxOil: 5
+  inventorySpace: 5
+  maxPlastic: 3
+  maxOil: 2
   maxWood: 5
   plasticStored: 0
   oilStored: 0

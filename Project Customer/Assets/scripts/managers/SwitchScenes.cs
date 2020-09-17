@@ -15,7 +15,7 @@ public class SwitchScenes : MonoBehaviour
         SceneManager.LoadScene("Game");
     }
 
-    public void LoadEnd()
+    public void LoadLoseScreen()
     {
         SceneManager.LoadScene("RestartScreen");
     }
@@ -28,5 +28,10 @@ public class SwitchScenes : MonoBehaviour
     public void LoadTutorial()
     {
         SceneManager.LoadScene("Tutorial");
+    }
+
+    public void LoadWinScreen()
+    {
+        SceneManager.LoadScene("win menu");
     }
 }
