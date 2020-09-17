@@ -266,7 +266,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 2.18
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6424905212492449472
 MonoBehaviour:
@@ -334,7 +334,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 2.09
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1619690558298119370
 MonoBehaviour:
@@ -358,7 +358,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2273916944605091770}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 12187329ac0eebf408ee3d8cbc72bcdf, type: 3}
   m_Name: 

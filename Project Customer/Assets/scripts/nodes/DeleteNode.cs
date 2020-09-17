@@ -5,6 +5,7 @@ using UnityEngine;
 public class DeleteNode : MonoBehaviour
 {
     bool selected;
+
     public Transform objectCreatedFor;
     
     void Update()
@@ -21,11 +22,18 @@ public class DeleteNode : MonoBehaviour
         if(selected == true)
         {
             if (Input.GetKey(KeyCode.Delete) || Input.GetKey(KeyCode.Backspace))
-            {               
+            {
+                Debug.Log(objectCreatedFor);
                 objectCreatedFor.GetComponent<MovementQue>().RemoveCoordinateFromQue(transform.position);
                 GameObject selectionManager = GameObject.FindGameObjectWithTag("LevelManager");
                 selectionManager.GetComponent<SelectionManager>().selectedObjects.Remove(gameObject);
             }
         }        
+    }
+    public void SetObjectCreatedFor(Transform pObject)
+    {
+        Debug.Log(pObject);
+        objectCreatedFor = pObject;
+        Debug.Log(objectCreatedFor);
     }
 }

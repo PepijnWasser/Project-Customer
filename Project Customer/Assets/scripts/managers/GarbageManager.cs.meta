@@ -3,7 +3,11 @@ guid: f80949a20611fed498d16bc1caf1de20
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - oil: {fileID: 2082802155618251192, guid: 474a9eaac6069224f8aaca23bd3fc569, type: 3}
+  - plastic: {fileID: 400623834310223913, guid: 24a8d2952d593684488d4ea6b16bf64b,
+      type: 3}
+  - wood: {fileID: 1810667451826216140, guid: f7676a5f42d2eca4d822ace0e9ff5d56, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

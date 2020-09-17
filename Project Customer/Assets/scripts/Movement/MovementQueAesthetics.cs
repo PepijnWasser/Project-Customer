@@ -39,8 +39,9 @@ public class MovementQueAesthetics : MonoBehaviour
             if (needToSpawn == true)
             {
                 Transform newNode = Instantiate(queNode, coordinate, Quaternion.identity);
-                newNode.GetComponent<DeleteNode>().objectCreatedFor = transform;
+                newNode.GetComponent<DeleteNode>().SetObjectCreatedFor(transform);
                 queNodes.Add(newNode);
+               // Debug.Log(newNode.GetComponent<DeleteNode>().objectCreatedFor);
             }
         }
     }
