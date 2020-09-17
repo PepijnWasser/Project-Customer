@@ -8,19 +8,10 @@ public class CameraMovement : MonoBehaviour
     public float boostSpeed;
     public float rotationSpeed;
 
-    int worldSize;
-
-    private void Start()
-    {
-        if(GameObject.FindGameObjectWithTag("LevelManager").GetComponent<WorldData>()  != null)
-        {
-            worldSize = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<WorldData>().mapSize;
-        }
-        else
-        {
-            Debug.Log("no worldData component found");
-        }
-    }
+    public int worldUpperBorder;
+    public int worldLowerBorder;
+    public int worldLeftBorder;
+    public int worldRightBorder;
 
     private void Update()
     {
@@ -40,8 +31,8 @@ public class CameraMovement : MonoBehaviour
         {
             transform.Translate(moveVec * moveSpeed * Time.deltaTime);
         }
-        float newX = Mathf.Clamp(transform.position.x, -worldSize / 2, worldSize / 2);
-        float newZ = Mathf.Clamp(transform.position.z, -worldSize / 2, worldSize / 2);
+        float newX = Mathf.Clamp(transform.position.x, worldUpperBorder, worldLowerBorder);
+        float newZ = Mathf.Clamp(transform.position.z, worldLeftBorder, worldRightBorder);
         transform.position = new Vector3(newX, transform.position.y, newZ);
 
     }

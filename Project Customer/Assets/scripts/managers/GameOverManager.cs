@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class GameOverManager : MonoBehaviour
 {
     public int maxGarbage;
+    public int minGarbage;
     PlayerInfo playerInfo;
 
     private void Start()
@@ -22,6 +23,7 @@ public class GameOverManager : MonoBehaviour
     {
         TestForTooMuchGarbage();
         TestForTooFewFuel();
+        TestForTooFewGarbage();
     }
 
     void TestForTooMuchGarbage()
@@ -34,7 +36,7 @@ public class GameOverManager : MonoBehaviour
 
         if (amountOfGarbage > maxGarbage)
         {
-            SceneManager.LoadScene("end menu");
+            SceneManager.LoadScene("RestartScreen");
         }
     }
 
@@ -45,6 +47,20 @@ public class GameOverManager : MonoBehaviour
         if(amountOfFuel <= 0)
         {
             SceneManager.LoadScene("RestartScreen");
+        }
+    }
+
+    void TestForTooFewGarbage()
+    {
+        int amountOfOil = GameObject.FindGameObjectsWithTag("oil").Count();
+        int amountOfPlastic = GameObject.FindGameObjectsWithTag("plastic").Count();
+        int amountOfWood = GameObject.FindGameObjectsWithTag("wood").Count();
+
+        int amountOfGarbage = amountOfOil + amountOfPlastic + amountOfWood;
+
+        if (amountOfGarbage < minGarbage)
+        {
+            SceneManager.LoadScene("win menu");
         }
     }
 }

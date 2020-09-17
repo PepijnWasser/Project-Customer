@@ -74,7 +74,7 @@ public class EventManager : MonoBehaviour
             {
                 eventDisplay.enabled = true;
                 string randomMessage = messages[Random.Range(0, messages.Count())];
-                displayMessage = randomMessage + "\n\n" + "It will cost: " + cost.ToString() + "dollars.";
+                displayMessage = randomMessage + "\n\n" + "It will cost: " + cost.ToString() + " dollars.";
                 eventMessage.text = displayMessage;
             }
             else

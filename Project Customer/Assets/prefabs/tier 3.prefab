@@ -101,10 +101,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b86c744a7a69f064292d9ec6921ff30d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventorySpace: 10
-  maxPlastic: 5
-  maxOil: 5
-  maxWood: 5
+  inventorySpace: 15
+  maxPlastic: 15
+  maxOil: 10
+  maxWood: 13
   plasticStored: 0
   oilStored: 0
   woodStored: 0
