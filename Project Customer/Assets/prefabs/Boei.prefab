@@ -292,7 +292,7 @@ GameObject:
   - component: {fileID: 3014538388167157161}
   - component: {fileID: 1029715496275346048}
   - component: {fileID: 1619690558298119370}
-  - component: {fileID: 7582327490576119819}
+  - component: {fileID: 6112232262282070305}
   m_Layer: 0
   m_Name: Boei
   m_TagString: Untagged
@@ -351,7 +351,7 @@ MonoBehaviour:
   selected: 0
   selectedMaterial: {fileID: 2100000, guid: dc109a39fc635b54c8fa8e151b6e35dd, type: 2}
   notSelectedMaterial: {fileID: 2100000, guid: c08065926528e624b97e8bc698ab3993, type: 2}
---- !u!114 &7582327490576119819
+--- !u!114 &6112232262282070305
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
