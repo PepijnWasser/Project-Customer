@@ -10516,7 +10516,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'buy small boat
+  m_Text: 'buy small boat - 1$
 
 
 '
@@ -10787,7 +10787,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'buy huge boat
+  m_Text: 'buy huge boat - 4$
 
 '
 --- !u!222 &898283554
@@ -15131,7 +15131,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'buy medium boat
+  m_Text: 'buy medium boat - 2$
 
 
 '
@@ -17093,7 +17093,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'buy large boat
+  m_Text: 'buy large boat - 3$
 
 
 '
